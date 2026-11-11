@@ -78,7 +78,7 @@ body {
 .time, .meteo {
     display: flex;
     color: white;
-    font-family: 'Comic Neue', cursive;
+    font-family: 'Comic Neue';
     font-weight: 300;
 }
 .time {
