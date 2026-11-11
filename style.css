@@ -79,7 +79,7 @@ body {
     display: flex;
     color: white;
     font-family: 'Comic Neue';
-    font-weight: 150000;
+    font-weight: 700;
 }
 .time {
     flex-direction: column;
@@ -101,7 +101,7 @@ body {
 .en-tete-ecran {
     display: flex;
     justify-content: space-between;
-    padding: 40px 5px;
+    padding: 10px 5px;
     width: 100%;
     box-sizing: border-box;
 }
