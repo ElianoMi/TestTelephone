@@ -1,3 +1,6 @@
+import { initGesture } from './gesture.js';
+import { afficher } from './useful.js';
+
 export function creerWidget() {
     const widgetbar = document.createElement("div");
     widgetbar.id = "widgetBar";
@@ -43,7 +46,8 @@ export function creerNav() {
 
     const navbar = document.createElement("div");
     navbar.id = "navBar";
-    navbar.className = 'navBar';
+    navbar.className = 'navBar cache';
+
 
     const previous = document.createElementNS(SVG_NS, "svg");
     previous.id = "previous";
@@ -53,6 +57,11 @@ export function creerNav() {
     polygone.setAttribute("points","20,50 85,85 85,10");
     previous.appendChild(polygone);
     navbar.appendChild(previous);
+
+    initGesture(previous, (gesture) => {
+        if (gesture === 'Tap') {afficher("accueil");}
+    });
+
 
     const home = document.createElementNS(SVG_NS, "svg");
     home.id = "acc";
@@ -65,17 +74,27 @@ export function creerNav() {
     home.appendChild(rond);
     navbar.appendChild(home);
 
+    initGesture(home, (gesture) => {
+        if (gesture === 'Tap') {afficher("accueil");}
+    });
+
+
     const app = document.createElementNS(SVG_NS, "svg");
     app.id = "app";
     app.classList.add('carre');
     app.setAttribute("viewBox", "0 0 100 100");
     const rect = document.createElementNS(SVG_NS, "rect");
-    rect.setAttribute("x", "50");
-    rect.setAttribute("y", "50");
-    rect.setAttribute("width","90");
-    rect.setAttribute("height", "90");
+    rect.setAttribute("x", "15");
+    rect.setAttribute("y", "15");
+    rect.setAttribute("width","70");
+    rect.setAttribute("height", "70");
     app.appendChild(rect);
     navbar.appendChild(app);
+
+    initGesture(app, (gesture) => {
+        if (gesture === 'Tap') {afficher("accueil");}
+    });
+
 
     return navbar;
 }

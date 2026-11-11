@@ -87,8 +87,6 @@ for (const e of ecrans) {
     telephone.appendChild(section);
 }
 
-telephone.appendChild(creerNav());
-
 updateTime();
 fitTime();
 setInterval(updateTime, 1000);
@@ -97,5 +95,9 @@ afficher("home");
 
 let firstConnect = true;
 initGesture(telephone, (gesture) => {
-    if (gesture === 'Up' && firstConnect) {afficher("accueil"); firstConnect = false;}
+    if (gesture === 'Up' && firstConnect) {
+        afficher("accueil");
+        telephone.appendChild(creerNav());
+        firstConnect = false;
+    }
 });
