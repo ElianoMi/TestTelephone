@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
 body {
     display: flex;
     align-items: center;
@@ -78,7 +79,7 @@ body {
 .time, .meteo {
     display: flex;
     color: white;
-    font-family: cursive;
+    font-family: 'Caveat', cursive;
     font-weight: lighter;
 }
 .time {
