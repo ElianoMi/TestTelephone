@@ -83,7 +83,7 @@ for (const e of ecrans) {
             bloc.appendChild(meteo);
             section.appendChild(bloc);
             const spaceBar = document.createElement("div");
-            widgetbar.appendChild(spaceBar);
+            section.appendChild(spaceBar);
         };
     }
 
