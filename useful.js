@@ -12,7 +12,7 @@ export function afficher(n) {
     telephone.style.background = (ecranActif?.screen)
         ? `url('./Images/Fronts/${ecranActif?.screen}.jpg') center/cover`
         : "lightblue";
-    if(ecranActif?.text) {
+    if(ecranActif?.messages) {
         const l = document.querySelector("#messages .messages");
         l.scrollTop = l.scrollHeight;
     }

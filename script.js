@@ -1,43 +1,13 @@
 import { afficher, updateTime, fitTime } from './useful.js';
 import { initGesture } from './gesture.js';
 import { ecrans } from './data.js';
+import { creerWidget, creerNav } from './Bars.js';
 
 const telephone = document.createElement("div");
 telephone.id = "telephone";
 document.body.append(telephone);
 
-const widgetbar = document.createElement("div");
-widgetbar.id = "widgetBar";
-widgetbar.className = 'widgetbar';
-
-const heure = document.createElement("time");
-heure.id = "heure";
-heure.className ='noselect';
-widgetbar.appendChild(heure);
-
-const spaceBar = document.createElement("div");
-//spaceBar.className = "spaceBar";
-widgetbar.appendChild(spaceBar);
-const statusBar = document.createElement("div");
-statusBar.className = 'statusBar noselect';
-const signalStrength = document.createElement("img");
-signalStrength.id = "signal";
-signalStrength.className = 'status';
-signalStrength.src = './Images/Logos/SignalStrength.png'
-statusBar.appendChild(signalStrength);
-const Wifi = document.createElement("img");
-Wifi.id = "wifi";
-Wifi.className = 'status';
-Wifi.src = './Images/Logos/Wifi.png'
-statusBar.appendChild(Wifi);
-const battery = document.createElement("img");
-battery.id = "battery";
-battery.className = 'status';
-battery.src = './Images/Logos/Batterie.png'
-statusBar.appendChild(battery);
-widgetbar.appendChild(statusBar);
-
-telephone.appendChild(widgetbar);
+telephone.appendChild(creerWidget());
 
 for (const e of ecrans) {
     const section = document.createElement("section");
@@ -116,6 +86,9 @@ for (const e of ecrans) {
     section.appendChild(div2);
     telephone.appendChild(section);
 }
+
+telephone.appendChild(creerNav());
+
 updateTime();
 fitTime();
 setInterval(updateTime, 1000);
