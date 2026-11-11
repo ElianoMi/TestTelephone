@@ -85,7 +85,7 @@ body {
     flex-direction: column;
     align-self: flex-start;
     margin: 0;
-    padding: 40px 5px;
+    padding: 10px 5px;
     text-transform: capitalize;
     word-spacing: -20%;
 }
