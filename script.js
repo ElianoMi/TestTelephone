@@ -33,7 +33,7 @@ statusBar.appendChild(Wifi);
 const battery = document.createElement("img");
 battery.id = "battery";
 battery.className = 'status';
-battery.src = './Images/Logos/batterie.png'
+battery.src = './Images/Logos/Batterie.png'
 statusBar.appendChild(battery);
 widgetbar.appendChild(statusBar);
 
@@ -60,7 +60,7 @@ for (const e of ecrans) {
         const meteo = document.createElement("div");
         meteo.className = 'meteo';
         const logoMeteo = document.createElement("img");
-        logoMeteo.src = './Images/Logos/meteo.png';
+        logoMeteo.src = './Images/Logos/Meteo.png';
         logoMeteo.className = 'img-meteo';
         const temperature = document.createElement("span");
         temperature.textContent = "19°C";
