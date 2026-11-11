@@ -54,7 +54,7 @@ export function fitTime() {
         const h3 = time.querySelector('h3');
         const meteo = ecran.querySelector('.meteo');
         
-        const cible = time.classList.contains('big') ? (longueur / 2.5) : (longueur / 3);
+        const cible = time.classList.contains('big') ? (longueur / 2.5) : (longueur / 3.5);
         
         let tailleH2 = 0;
         let tailleH3 = 0;
