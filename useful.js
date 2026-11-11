@@ -1,4 +1,4 @@
-import { ecrans } from './data.js';
+import { ecrans, lastEcrans } from './data.js';
 
 export function afficher(n) {
     const liste_ecrans = document.querySelectorAll(".ecran");
@@ -16,6 +16,8 @@ export function afficher(n) {
         const l = document.querySelector("#messages .messages");
         l.scrollTop = l.scrollHeight;
     }
+    lastEcrans.push(n);
+    if (n === "accueil") lastEcrans.splice(0, lastEcrans.length, "accueil");
 
     fitTime();
 };
@@ -43,7 +45,6 @@ export function fitTime() {
     const tel = document.getElementById('telephone');
     const longueur = tel.clientWidth;
 
-    // On parcourt les écrans actifs pour cibler à la fois .time et #meteo
     const ecransActifs = document.querySelectorAll('.ecran:not(.cache)');
     
     ecransActifs.forEach(ecran => {

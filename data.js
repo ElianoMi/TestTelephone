@@ -25,3 +25,5 @@ export const ecrans = [
     {id: "parametres",
         titre:"Paramètres",},
 ]
+
+export let lastEcrans = ["accueil"];
