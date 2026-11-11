@@ -125,7 +125,7 @@ body {
     justify-content: space-between;
     flex: 1;
     border-radius: 0px 0px 15px 15px;
-    padding: 0px;
+    padding: 20px 0px;
     box-sizing: border-box;
     min-height: 0;
 }
