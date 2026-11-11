@@ -79,7 +79,7 @@ body {
     display: flex;
     color: white;
     font-family: 'Comic Neue';
-    font-weight: 500;
+    font-weight: 5000;
 }
 .time {
     flex-direction: column;
