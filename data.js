@@ -27,4 +27,8 @@ export const ecrans = [
         titre:"Paramètres",},
 ]
 
-export let lastEcrans = ["accueil"];
+export const state = {
+    lastEcrans: ["accueil"],
+    lastTriMessage: new Map(),
+    lastId: -1
+};

@@ -1,4 +1,4 @@
-import { ecrans, lastEcrans } from './data.js';
+import { ecrans, state } from './data.js';
 
 export function afficher(n) {
     const liste_ecrans = document.querySelectorAll(".ecran");
@@ -13,15 +13,16 @@ export function afficher(n) {
         ? `url('./Images/Fronts/${ecranActif?.screen}.jpg') center/cover`
         : "lightblue";
     if (ecranActif?.messages) {
+        actualiserMessages(ecranActif);
         const l = document.querySelector(`#${n} .contacts`);
-        l.scrollTop = l.scrollHeight;
+        l.scrollTop = 0;
     }
     if (n.startsWith("Conv")) {
         const l = document.querySelector(`#${n} .messages`);
         l.scrollTop = l.scrollHeight;
     }
-    lastEcrans.push(n);
-    if (n === "accueil") lastEcrans.splice(0, lastEcrans.length, "accueil");
+    state.lastEcrans.push(n);
+    if (n === "accueil") state.lastEcrans.splice(0, state.lastEcrans.length, "accueil");
 
     fitTime();
 };
@@ -104,4 +105,43 @@ export function triMessages(messages) {
     messagesTries = new Map([...messagesTries].sort(([, listA], [, listB]) => listB.at(-1).date - listA.at(-1).date ));//les messages sont triés, la conversation la plus récente en haut
 
     return messagesTries;
+}
+
+export function actualiserMessages (ecran){
+    const telephone = document.getElementById("telephone");
+    const messages = triMessages(ecran.messages);
+
+    for (const [c, msg] of messages) {
+        if ( !state.lastTriMessage.has(c) ) { //nouveau contact : on créé la page
+            state.lastId++;
+            const idConv = "Conv" + state.lastId.toString();
+
+            const section = document.createElement("section");
+            ecrans.push({
+                titre : c,
+                noNavigation: true,
+                id : idConv,
+                screen : "messages",
+                ignore : true,
+            })
+            section.id = idConv;
+            section.className = 'cache ecran noselect';
+
+            const h1 = document.createElement("h1");
+            h1.textContent = c;
+            section.appendChild(h1);
+
+            const ul = document.createElement("ul");
+            ul.className = 'messages';
+            section.appendChild(ul);
+
+            const navBar = document.getElementById("navBar");
+            if (navBar)  telephone.insertBefore(section, navBar);
+            else telephone.appendChild(section);
+        }
+
+
+    }
+
+    state.lastTriMessage = messages;
 }

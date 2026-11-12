@@ -1,4 +1,4 @@
-import { ecrans } from './data.js';
+import { ecrans, state } from './data.js';
 import { initGesture } from './gesture.js';
 import { afficher, triMessages } from './useful.js';
 
@@ -8,6 +8,7 @@ export function creerEcrans() {
     for (const e of ecrans) {
         if (!e.ignore){
             const section = document.createElement("section");
+            e.ignore = true;
             section.id = e.id;
             section.className = 'cache ecran noselect';
 
@@ -54,7 +55,7 @@ export function creerEcrans() {
 
             
             if (e.messages) {
-                const listeMessages = triMessages(e.messages);
+                state.lastTriMessage = triMessages(e.messages);
                 const contacts = document.createElement("ul");
                 contacts.className = 'contacts';
                 let i = 0;
@@ -68,8 +69,9 @@ export function creerEcrans() {
                     };
                 const dateFormat = new Intl.DateTimeFormat(undefined, options);
 
-                for (const [c, messages] of listeMessages) {     
+                for (const [c, messages] of state.lastTriMessage) {     
                     const idConv = "Conv" + i.toString();
+                    state.lastId = i;
                     const conteneur = document.createElement("li");
                     conteneur.className = 'contact';
 
@@ -78,7 +80,7 @@ export function creerEcrans() {
 
                     const ssection = document.createElement("section");
                     ecrans.push({
-                        titre : idConv,
+                        titre : c,
                         noNavigation: true,
                         id : idConv,
                         screen : "messages",
@@ -105,7 +107,7 @@ export function creerEcrans() {
 
                         const date = document.createElement("span");
                         date.className = 'dateMsg2 cache';
-                        date.textContent = dateFormat.format(messages.at(-1).date);
+                        date.textContent = dateFormat.format(m.date);
                         li.appendChild(date);
 
                         initGesture(li, (gesture) => {

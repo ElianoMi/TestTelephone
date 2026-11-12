@@ -1,6 +1,6 @@
 import { initGesture } from './gesture.js';
 import { afficher } from './useful.js';
-import { lastEcrans } from './data.js';
+import { state } from './data.js';
 
 export function creerWidget() {
     const widgetbar = document.createElement("div");
@@ -60,10 +60,10 @@ export function creerNav() {
     navbar.appendChild(previous);
 
     initGesture(previous, (gesture) => {
-        if (gesture === 'Tap' && lastEcrans.at(-1) !== "accueil") {
-            lastEcrans.pop();
-            afficher(lastEcrans.at(-1));
-            if (lastEcrans.at(-1) !== "accueil") lastEcrans.pop();
+        if (gesture === 'Tap' && state.lastEcrans.at(-1) !== "accueil") {
+            state.lastEcrans.pop();
+            afficher(state.lastEcrans.at(-1));
+            if (state.lastEcrans.at(-1) !== "accueil") state.lastEcrans.pop();
         }
     });
 
