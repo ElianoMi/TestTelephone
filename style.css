@@ -165,6 +165,10 @@ body {
 .contacts {
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    flex: 1;
+
     padding: 0;
     margin: 20px 0px 0px 0px;
     gap: 2px;
@@ -173,7 +177,6 @@ body {
     box-sizing: border-box;
 
     overflow-y: auto;
-    flex: 1;
     min-height: 0;
 
     list-style-type: none;
@@ -185,11 +188,16 @@ body {
     touch-action: auto;
 }
 .contact {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
     width: 100%;
-    padding: 10px 15px;
+    padding: 2% 5%;
     border-radius: 0px;
     word-wrap: break-word;
-    align-self: flex-start;
+
     background-color: rgba(119, 136, 153, 60%);
     font-family: Georgia, 'Times New Roman', Times, serif;
     color: black;
@@ -215,6 +223,17 @@ body {
 
     touch-action: auto;
 }
+.message-recu, .message-envoye {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: black;
+    box-sizing: border-box;
+}
+.message-recu {align-items: flex-start;}
+.message-envoye {align-items: flex-end;}
 .msg-recu, .msg-envoye {
     max-width: 70%;
     padding: 10px 15px;
@@ -234,13 +253,21 @@ body {
     color: white;
     border-bottom-right-radius: 2px;
 }
+.dateMsg1, .dateMsg2 {
+    border-radius: 15px;
+    width: fit-content;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 75%;
+}
+.dateMsg1 { color: darkslategrey; }
+.dateMsg2 { color: white; font-weight: lighter; }
 .conteneur {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     gap: 10px; 
     align-items: center;     /* centre sur l'axe transversal */
-    justify-content: center; /* centre sur l'axe principal */
+    justify-content: center; 
 }
 .noselect {
     -webkit-user-select: none;

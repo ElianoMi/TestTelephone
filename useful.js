@@ -29,8 +29,8 @@ export function afficher(n) {
 export const updateTime = () => {
     const t=new Date();
     const time = `${String(t.getHours()).padStart(2, '0')}:${String(t.getMinutes()).padStart(2, '0')}`;
-    const day = `${t.toLocaleDateString('fr-FR', { weekday: 'short', day: 'numeric', month: 'short' })}`;
-    const dayLong = `${t.toLocaleDateString('fr-FR', { weekday: 'long', day: 'numeric', month: 'long' })}`;
+    const day = `${t.toLocaleDateString(undefined, { weekday: 'short', day: 'numeric', month: 'short' })}`;
+    const dayLong = `${t.toLocaleDateString(undefined, { weekday: 'long', day: 'numeric', month: 'long' })}`;
 
     const horloges = document.querySelectorAll('time');
     horloges.forEach( horloge => {
@@ -92,30 +92,16 @@ export function fitTime() {
 }
 
 export function triMessages(messages) {
-    let messagesTries = [];
+    let messagesTries = new Map();
 
     for (let m of messages) {
-        const index = messagesTries.findIndex(mess => mess[0] === m[0]);
-        if (index !== -1) {
-            messagesTries[index][1].push([m[1], m[2], m[3]]);
-        }
-        else {
-            messagesTries.push([m[0], [[m[1], m[2], m[3]]]]);
-        }
+        if ( !messagesTries.has( m[0] )) messagesTries.set( m[0] ,  []);
+        messagesTries.get( m[0] ).push({ reçu : m[1], message : m[2], date : m[3] });
     }//les messages sont maintenant regroupés par contacts
 
-    messagesTries = messagesTries.map(groupe => {
-        const contacts = groupe[0];
-        const messages = groupe[1];
-        messages.sort((a, b) => a[2] - b[2]);
-        return [contacts, messages];
-    });//les messages sont regroupés par contacts, le plus récent en bas
+    messagesTries.forEach(value => {value.sort((a, b) => a.date - b.date); } );//les messages sont regroupés par contacts, le plus récent en bas
 
-    messagesTries.sort((groupeA, groupeB) => {
-        const dateRecentA = groupeA[1][groupeA[1].length - 1][2];
-        const dateRecentB = groupeB[1][groupeB[1].length - 1][2];
-        return dateRecentB - dateRecentA;
-    });//les messages sont triés, la conversation la plus récente en haut
+    messagesTries = new Map([...messagesTries].sort(([, listA], [, listB]) => listB.at(-1).date - listA.at(-1).date ));//les messages sont triés, la conversation la plus récente en haut
 
     return messagesTries;
 }
