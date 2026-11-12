@@ -162,6 +162,39 @@ body {
     border-radius: 8px;
     font-size: 20px;
 }
+.contacts {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin: 20px 0px 0px 0px;
+    gap: 2px;
+    width: 100%;
+    
+    box-sizing: border-box;
+
+    overflow-y: auto;
+    flex: 1;
+    min-height: 0;
+
+    list-style-type: none;
+
+    scrollbar-width: thin;
+    scrollbar-color: steelblue skyblue;
+    /*scrollbar-width: none*/
+
+    touch-action: auto;
+}
+.contact {
+    width: 100%;
+    padding: 10px 15px;
+    border-radius: 0px;
+    word-wrap: break-word;
+    align-self: flex-start;
+    background-color: rgba(119, 136, 153, 60%);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: black;
+    box-sizing: border-box;
+}
 .messages {
     display: flex;
     flex-direction: column;

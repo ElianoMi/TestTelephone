@@ -64,7 +64,6 @@ export function creerNav() {
             lastEcrans.pop();
             afficher(lastEcrans.at(-1));
             if (lastEcrans.at(-1) !== "accueil") lastEcrans.pop();
-            console.log(lastEcrans);
         }
     });
 

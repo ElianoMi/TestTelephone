@@ -1,5 +1,6 @@
 import { ecrans } from './data.js';
-import { afficher } from './useful.js';
+import { initGesture } from './gesture.js';
+import { afficher, triMessages } from './useful.js';
 
 export function creerEcrans() {
     const listEcrans = [];
@@ -52,16 +53,47 @@ export function creerEcrans() {
 
         
         if (e.messages) {
-            const ul = document.createElement("ul");
-            ul.className = 'messages';
-            for (const t of e.messages) {
-                const li = document.createElement("li");
-                const received = t[0];
-                li.textContent = t[1];
-                li.className = (received) ? "msg-recu" : "msg-envoye";
-                ul.appendChild(li);
+            const listeMessages = triMessages(e.messages);
+            const contacts = document.createElement("ul");
+            contacts.className = 'contacts';
+            let i = 0;
+
+            for (const m of listeMessages) {
+                const idConv = "Conv" + i.toString();
+                const contact = document.createElement("li");
+                contact.className = 'contact';
+                contact.textContent = m[0];
+
+                const ssection = document.createElement("section");
+                ssection.id = idConv;
+                ssection.className = 'cache ecran noselect';
+                const h1 = document.createElement("h1");
+                h1.textContent = m[0];
+                ssection.appendChild(h1);
+
+                const ul = document.createElement("ul");
+                ul.className = 'messages';
+
+                for(const t of m[1]) {
+                    const li = document.createElement("li");
+                    const received = t[0];
+                    li.textContent = t[1];
+                    li.className = (received) ? "msg-recu" : "msg-envoye";
+
+                    ul.appendChild(li);
+                }
+                
+                ssection.appendChild(ul);
+                listEcrans.push(ssection);
+                    
+                initGesture(contact, (gesture) => {
+                    if (gesture === 'Tap') {afficher(idConv);}
+                });
+
+                i++;
+                contacts.appendChild(contact);
             }
-            section.appendChild(ul);
+            section.appendChild(contacts);
         }
 
         const div2 = document.createElement("div");

@@ -12,8 +12,12 @@ export function afficher(n) {
     telephone.style.background = (ecranActif?.screen)
         ? `url('./Images/Fronts/${ecranActif?.screen}.jpg') center/cover`
         : "lightblue";
-    if(ecranActif?.messages) {
-        const l = document.querySelector("#messages .messages");
+    if (ecranActif?.messages) {
+        const l = document.querySelector(`#${n} .contacts`);
+        l.scrollTop = l.scrollHeight;
+    }
+    if (n.startsWith("Conv")) {
+        const l = document.querySelector(`#${n} .messages`);
         l.scrollTop = l.scrollHeight;
     }
     lastEcrans.push(n);
@@ -85,4 +89,33 @@ export function fitTime() {
             }
         }
     });
+}
+
+export function triMessages(messages) {
+    let messagesTries = [];
+
+    for (let m of messages) {
+        const index = messagesTries.findIndex(mess => mess[0] === m[0]);
+        if (index !== -1) {
+            messagesTries[index][1].push([m[1], m[2], m[3]]);
+        }
+        else {
+            messagesTries.push([m[0], [[m[1], m[2], m[3]]]]);
+        }
+    }//les messages sont maintenant regroupés par contacts
+
+    messagesTries = messagesTries.map(groupe => {
+        const contacts = groupe[0];
+        const messages = groupe[1];
+        messages.sort((a, b) => a[2] - b[2]);
+        return [contacts, messages];
+    });//les messages sont regroupés par contacts, le plus récent en bas
+
+    messagesTries.sort((groupeA, groupeB) => {
+        const dateRecentA = groupeA[1][groupeA[1].length - 1][2];
+        const dateRecentB = groupeB[1][groupeB[1].length - 1][2];
+        return dateRecentB - dateRecentA;
+    });//les messages sont triés, la conversation la plus récente en haut
+
+    return messagesTries;
 }
