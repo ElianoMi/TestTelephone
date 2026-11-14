@@ -1,5 +1,4 @@
 import { ecrans, state } from './data.js';
-import { initGesture } from './gesture.js';
 import { afficher, triMessages } from './useful.js';
 
 export function creerEcrans() {

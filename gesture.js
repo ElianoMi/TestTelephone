@@ -4,7 +4,6 @@ function handleGesture(deltaX, deltaY) {
     if (Math.abs(deltaY) > 25) lastGesture += (deltaY < 0) ? 'Up' : 'Down';
     if (Math.abs(deltaX) <= 25 && Math.abs(deltaY) <= 25 ) lastGesture = "Tap";
 
-    console.log(lastGesture);
     return lastGesture;
 }
 
