@@ -1,4 +1,4 @@
-import { afficher, updateTime, fitTime, actualiserMessages } from './useful.js';
+import { afficher, updateTime, fitTime, actualiserMessages, notification } from './useful.js';
 import { initGesture } from './gesture.js';
 import { creerWidget, creerNav } from './Bars.js';
 import { creerEcrans } from './Ecrans.js'
@@ -28,17 +28,19 @@ initGesture(telephone, (gesture) => {
         afficher("accueil");
         telephone.appendChild(creerNav());
         firstConnect = false;
+
+        const indexMsgPage = ecrans.findIndex(e => e.id === "messages");
+
+        setTimeout( () => {
+            ecrans[indexMsgPage].messages.push(["Maman", 1, "Nouveau message 1", new Date()]);
+            actualiserMessages(ecrans[indexMsgPage]);
+        }, 2000);
+
+        setTimeout( () => {
+            ecrans[indexMsgPage].messages.push(["Téo", 1, "Nouveau message 2", new Date()]);
+            actualiserMessages(ecrans[indexMsgPage]);
+            notification("1 new message : \"Téo\" (et on essaie un très long message pour un tester les effets d'un overflow)", "messages");
+        }, 5000);
     }
 });
 
-const indexMsgPage = ecrans.findIndex(e => e.id === "messages");
-
-setTimeout( () => {
-    ecrans[indexMsgPage].messages.push(["Maman", 1, "Nouveau message 1", new Date()]);
-    actualiserMessages(ecrans[indexMsgPage]);
-}, 10000);
-
-setTimeout( () => {
-    ecrans[indexMsgPage].messages.push(["Téo", 1, "Nouveau message 2", new Date()]);
-    actualiserMessages(ecrans[indexMsgPage]);
-}, 15000);

@@ -221,3 +221,25 @@ function creerMessages (name, msg) {
     const date = contact.querySelectorAll('span')[1];
     date.textContent = lastMsg;
 }
+
+export function notification( txt, cible ) {
+    const telephone = document.getElementById("telephone");
+    let notif = document.getElementById("notif");
+    if (notif) notif.remove();
+
+    notif = document.createElement("div");
+    notif.className = 'notif noselect';
+    notif.id = 'notif';
+    notif.textContent = txt;
+
+    initGesture(notif, (gesture) => {
+        if (gesture === 'Tap') {
+            afficher(cible);
+            notif.remove();
+        }
+    });
+
+    telephone.appendChild(notif);
+
+    setTimeout( () => notif.remove(), 5000);
+}
