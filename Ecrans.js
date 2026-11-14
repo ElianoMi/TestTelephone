@@ -1,5 +1,5 @@
-import { ecrans, state } from './data.js';
-import { afficher, triMessages } from './useful.js';
+import { ecrans } from './data.js';
+import { afficher } from './useful.js';
 
 export function creerEcrans() {
     const listEcrans = [];
