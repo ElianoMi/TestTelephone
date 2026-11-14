@@ -30,5 +30,16 @@ export const ecrans = [
 export const state = {
     lastEcrans: ["accueil"],
     lastTriMessage: new Map(),
-    lastId: -1
+    dataParing: new Map(),
+    lastId: -1,
 };
+
+const options = {
+    year: "numeric",
+    month: "numeric",
+    day: "numeric",
+    hour: "numeric",
+    minute: "numeric",
+    hour12: false,
+};
+export const dateFormat = new Intl.DateTimeFormat(undefined, options);

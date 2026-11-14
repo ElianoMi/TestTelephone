@@ -7,6 +7,10 @@ body {
     padding: 5px;
     box-sizing: border-box;
 }
+ul {
+    display: flex;
+    flex-direction: column;
+}
 #telephone {
     display: flex;
     flex-direction: column;
@@ -106,8 +110,10 @@ body {
     font-weight: 700;
 }
 .time {
+    display: flex;
     flex-direction: column;
     align-self: flex-start;
+
     margin: 0;
     padding: 20px 5px;
     text-transform: capitalize;
@@ -125,7 +131,9 @@ body {
 .en-tete-ecran {
     display: flex;
     justify-content: space-between;
-    padding: 10px 5px;
+    flex: 1;
+
+    padding: 10% 1%;
     width: 100%;
     box-sizing: border-box;
 }

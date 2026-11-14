@@ -53,87 +53,9 @@ export function creerEcrans() {
                 };
             }
 
-            
             if (e.messages) {
-                state.lastTriMessage = triMessages(e.messages);
                 const contacts = document.createElement("ul");
                 contacts.className = 'contacts';
-                let i = 0;
-                const options = {
-                    year: "numeric",
-                    month: "numeric",
-                    day: "numeric",
-                    hour: "numeric",
-                    minute: "numeric",
-                    hour12: false,
-                    };
-                const dateFormat = new Intl.DateTimeFormat(undefined, options);
-
-                for (const [c, messages] of state.lastTriMessage) {     
-                    const idConv = "Conv" + i.toString();
-                    state.lastId = i;
-                    const conteneur = document.createElement("li");
-                    conteneur.className = 'contact';
-
-                    const contact = document.createElement("span");
-                    contact.textContent = c;
-
-                    const ssection = document.createElement("section");
-                    ecrans.push({
-                        titre : c,
-                        noNavigation: true,
-                        id : idConv,
-                        screen : "messages",
-                        ignore : true,
-                    })
-                    ssection.id = idConv;
-                    ssection.className = 'cache ecran noselect';
-                    const h1 = document.createElement("h1");
-                    h1.textContent = c;
-                    ssection.appendChild(h1);
-
-                    const ul = document.createElement("ul");
-                    ul.className = 'messages';
-
-                    for(const m of messages) {
-                        const li = document.createElement("li");
-                        const received = m.reçu;
-                        li.className = (received) ? "message-recu" : "message-envoye";
-
-                        const message = document.createElement("span");
-                        message.className = (received) ? "msg-recu" : "msg-envoye";
-                        message.textContent = m.message;
-                        li.appendChild(message);
-
-                        const date = document.createElement("span");
-                        date.className = 'dateMsg2 cache';
-                        date.textContent = dateFormat.format(m.date);
-                        li.appendChild(date);
-
-                        initGesture(li, (gesture) => {
-                            if (gesture === 'Tap') date.classList.toggle("cache");
-                        });
-
-                        ul.appendChild(li);
-                    }
-                    
-                    ssection.appendChild(ul);
-                    listEcrans.push(ssection);
-
-                    conteneur.appendChild(contact);
-
-                    const date = document.createElement("span");
-                    date.className = 'dateMsg1';
-                    date.textContent = dateFormat.format(messages.at(-1).date);
-                    conteneur.appendChild(date);
-
-                    initGesture(conteneur, (gesture) => {
-                        if (gesture === 'Tap') {afficher(idConv);}
-                    });
-
-                    contacts.appendChild(conteneur);
-                    i++;
-                }
                 section.appendChild(contacts);
             }
 
