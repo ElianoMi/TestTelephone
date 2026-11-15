@@ -1,4 +1,5 @@
-import { photos } from './data.js';
+import { photos, dateFormat } from './data.js';
+import { initGesture } from './useful.js';
 
 export async function chargerPhotos() {
     const reponse = await fetch('./Images/Galerie/photos.json');
@@ -17,7 +18,9 @@ export async function chargerPhotos() {
         photos.set(item.nom, {
             chemin: item.chemin,
             date: dateValide,
-            sourceDate: item.sourceDate
+            sourceDate: item.sourceDate,
+            type: item.type,
+            miniature: item.miniature
         });
     }
 
@@ -40,12 +43,42 @@ export function actualiserGalerie() {
     grille.replaceChildren();
 
     for (const [nom, info] of photos) {
-        const img = document.createElement('img');
-        img.src = info.chemin;
-        img.alt = nom;
-        img.loading = 'lazy';
-        img.decoding = 'async';
-        img.className = 'photo';
-        grille.appendChild(img);
+        const cadre = document.createElement('figure');
+        cadre.className = 'photo-cadre';
+        
+        let el;
+        if (info.type === 'video') {
+            el = document.createElement('video');
+            el.src = `${info.chemin}#t=0.1`;
+            el.preload = 'metadata';
+            el.muted = true;
+            el.loop = true;
+            el.playsInline = true;
+        }
+        else {
+            el = document.createElement('img');
+            el.src = info.miniature ?? info.chemin;
+            el.alt = nom;
+            el.loading = 'lazy';
+            el.decoding = 'async';
+        }
+        el.className = 'photo';
+
+        const legende = document.createElement('figcaption');
+        legende.className = 'legende';
+        const dateTexte = info.date ? dateFormat.format(info.date) : 'date inconnue';
+        legende.textContent = `${nom} : ${dateTexte}`;
+
+        initGesture(el, (gesture) => {
+            if (gesture !== 'Tap') return;
+            const agrandi = cadre.classList.toggle('big');
+
+            if (info.type === 'video') el.paused ? el.play() : el.pause();
+            else el.src = agrandi ? info.chemin : (info.miniature ?? info.chemin);
+        });
+
+        cadre.appendChild(el);
+        cadre.appendChild(legende);
+        grille.appendChild(cadre);
     }
 }

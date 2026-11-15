@@ -1,0 +1,266 @@
+[
+  {
+    "nom": "IMG_20260914_191042.jpg",
+    "chemin": "./Images/Galerie/IMG_20260914_191042.jpg",
+    "date": "2026-09-14T17:10:43.000Z",
+    "sourceDate": "exif",
+    "type": "image",
+    "miniature": "./Images/Galerie/miniatures/IMG_20260914_191042.jpg.jpg"
+  },
+  {
+    "nom": "WhatsApp Image 2026-07-25 at 18.32.20 (4).jpeg",
+    "chemin": "./Images/Galerie/WhatsApp%20Image%202026-07-25%20at%2018.32.20%20(4).jpeg",
+    "date": "2026-07-25T16:32:20.000Z",
+    "sourceDate": "nomFichier",
+    "type": "image",
+    "miniature": "./Images/Galerie/miniatures/WhatsApp%20Image%202026-07-25%20at%2018.32.20%20(4).jpeg.jpg"
+  },
+  {
+    "nom": "VID_20260627_213632.mp4",
+    "chemin": "./Images/Galerie/VID_20260627_213632.mp4",
+    "date": "2026-06-27T19:36:32.000Z",
+    "sourceDate": "nomFichier",
+    "type": "video",
+    "miniature": null
+  },
+  {
+    "nom": "IMG_20260612_185654.jpg",
+    "chemin": "./Images/Galerie/IMG_20260612_185654.jpg",
+    "date": "2026-06-12T16:56:54.000Z",
+    "sourceDate": "exif",
+    "type": "image",
+    "miniature": "./Images/Galerie/miniatures/IMG_20260612_185654.jpg.jpg"
+  },
+  {
+    "nom": "VID_20260515_152329.mp4",
+    "chemin": "./Images/Galerie/VID_20260515_152329.mp4",
+    "date": "2026-05-15T13:23:29.000Z",
+    "sourceDate": "nomFichier",
+    "type": "video",
+    "miniature": null
+  },
+  {
+    "nom": "IMG_20260515_141151.jpg",
+    "chemin": "./Images/Galerie/IMG_20260515_141151.jpg",
+    "date": "2026-05-15T12:11:51.000Z",
+    "sourceDate": "exif",
+    "type": "image",
+    "miniature": "./Images/Galerie/miniatures/IMG_20260515_141151.jpg.jpg"
+  },
+  {
+    "nom": "IMG_20260512_200950.jpg",
+    "chemin": "./Images/Galerie/IMG_20260512_200950.jpg",
+    "date": "2026-05-12T18:09:50.000Z",
+    "sourceDate": "exif",
+    "type": "image",
+    "miniature": "./Images/Galerie/miniatures/IMG_20260512_200950.jpg.jpg"
+  },
+  {
+    "nom": "IMG_20260512_200943.jpg",
+    "chemin": "./Images/Galerie/IMG_20260512_200943.jpg",
+    "date": "2026-05-12T18:09:43.000Z",
+    "sourceDate": "exif",
+    "type": "image",
+    "miniature": "./Images/Galerie/miniatures/IMG_20260512_200943.jpg.jpg"
+  },
+  {
+    "nom": "Screenshot_2026-05-02-20-20-32-532_com.google.android.apps.photos.jpg",
+    "chemin": "./Images/Galerie/Screenshot_2026-05-02-20-20-32-532_com.google.android.apps.photos.jpg",
+    "date": "2026-05-02T18:20:32.000Z",
+    "sourceDate": "exif",
+    "type": "image",
+    "miniature": "./Images/Galerie/miniatures/Screenshot_2026-05-02-20-20-32-532_com.google.android.apps.photos.jpg.jpg"
+  },
+  {
+    "nom": "IMG_20260423_173911.jpg",
+    "chemin": "./Images/Galerie/IMG_20260423_173911.jpg",
+    "date": "2026-04-23T15:39:11.000Z",
+    "sourceDate": "exif",
+    "type": "image",
+    "miniature": "./Images/Galerie/miniatures/IMG_20260423_173911.jpg.jpg"
+  },
+  {
+    "nom": "IMG_20260423_173905.jpg",
+    "chemin": "./Images/Galerie/IMG_20260423_173905.jpg",
+    "date": "2026-04-23T15:39:06.000Z",
+    "sourceDate": "exif",
+    "type": "image",
+    "miniature": "./Images/Galerie/miniatures/IMG_20260423_173905.jpg.jpg"
+  },
+  {
+    "nom": "IMG_20260328_180022.jpg",
+    "chemin": "./Images/Galerie/IMG_20260328_180022.jpg",
+    "date": "2026-03-28T17:00:22.000Z",
+    "sourceDate": "exif",
+    "type": "image",
+    "miniature": "./Images/Galerie/miniatures/IMG_20260328_180022.jpg.jpg"
+  },
+  {
+    "nom": "VID_20260222_012228.mp4",
+    "chemin": "./Images/Galerie/VID_20260222_012228.mp4",
+    "date": "2026-02-22T00:22:28.000Z",
+    "sourceDate": "nomFichier",
+    "type": "video",
+    "miniature": null
+  },
+  {
+    "nom": "IMG_20260222_010739.jpg",
+    "chemin": "./Images/Galerie/IMG_20260222_010739.jpg",
+    "date": "2026-02-22T00:07:39.000Z",
+    "sourceDate": "exif",
+    "type": "image",
+    "miniature": "./Images/Galerie/miniatures/IMG_20260222_010739.jpg.jpg"
+  },
+  {
+    "nom": "IMG_20260221_233916.jpg",
+    "chemin": "./Images/Galerie/IMG_20260221_233916.jpg",
+    "date": "2026-02-21T22:39:16.000Z",
+    "sourceDate": "exif",
+    "type": "image",
+    "miniature": "./Images/Galerie/miniatures/IMG_20260221_233916.jpg.jpg"
+  },
+  {
+    "nom": "IMG_20260130_171105.jpg",
+    "chemin": "./Images/Galerie/IMG_20260130_171105.jpg",
+    "date": "2026-01-30T16:11:05.000Z",
+    "sourceDate": "exif",
+    "type": "image",
+    "miniature": "./Images/Galerie/miniatures/IMG_20260130_171105.jpg.jpg"
+  },
+  {
+    "nom": "Screenshot_2025-12-19-19-34-08-074_com.instagram.android.jpg",
+    "chemin": "./Images/Galerie/Screenshot_2025-12-19-19-34-08-074_com.instagram.android.jpg",
+    "date": "2025-12-19T18:34:08.000Z",
+    "sourceDate": "nomFichier",
+    "type": "image",
+    "miniature": "./Images/Galerie/miniatures/Screenshot_2025-12-19-19-34-08-074_com.instagram.android.jpg.jpg"
+  },
+  {
+    "nom": "Screenshot_2025-11-29-13-42-44-182_fr.vinted.jpg",
+    "chemin": "./Images/Galerie/Screenshot_2025-11-29-13-42-44-182_fr.vinted.jpg",
+    "date": "2025-11-29T12:42:44.000Z",
+    "sourceDate": "nomFichier",
+    "type": "image",
+    "miniature": "./Images/Galerie/miniatures/Screenshot_2025-11-29-13-42-44-182_fr.vinted.jpg.jpg"
+  },
+  {
+    "nom": "Screenshot_2025-11-29-13-42-36-705_fr.vinted.jpg",
+    "chemin": "./Images/Galerie/Screenshot_2025-11-29-13-42-36-705_fr.vinted.jpg",
+    "date": "2025-11-29T12:42:36.000Z",
+    "sourceDate": "nomFichier",
+    "type": "image",
+    "miniature": "./Images/Galerie/miniatures/Screenshot_2025-11-29-13-42-36-705_fr.vinted.jpg.jpg"
+  },
+  {
+    "nom": "IMG_20251108_162020.jpg",
+    "chemin": "./Images/Galerie/IMG_20251108_162020.jpg",
+    "date": "2025-11-08T15:20:20.000Z",
+    "sourceDate": "exif",
+    "type": "image",
+    "miniature": "./Images/Galerie/miniatures/IMG_20251108_162020.jpg.jpg"
+  },
+  {
+    "nom": "IMG_20250816_000608.jpg",
+    "chemin": "./Images/Galerie/IMG_20250816_000608.jpg",
+    "date": "2025-08-15T22:06:08.000Z",
+    "sourceDate": "exif",
+    "type": "image",
+    "miniature": "./Images/Galerie/miniatures/IMG_20250816_000608.jpg.jpg"
+  },
+  {
+    "nom": "IMG_20250731_013552.jpg",
+    "chemin": "./Images/Galerie/IMG_20250731_013552.jpg",
+    "date": "2025-07-30T23:35:52.000Z",
+    "sourceDate": "exif",
+    "type": "image",
+    "miniature": "./Images/Galerie/miniatures/IMG_20250731_013552.jpg.jpg"
+  },
+  {
+    "nom": "IMG_20250718_153858.jpg",
+    "chemin": "./Images/Galerie/IMG_20250718_153858.jpg",
+    "date": "2025-07-18T13:38:59.000Z",
+    "sourceDate": "exif",
+    "type": "image",
+    "miniature": "./Images/Galerie/miniatures/IMG_20250718_153858.jpg.jpg"
+  },
+  {
+    "nom": "IMG_20250717_101706.jpg",
+    "chemin": "./Images/Galerie/IMG_20250717_101706.jpg",
+    "date": "2025-07-17T08:17:06.000Z",
+    "sourceDate": "exif",
+    "type": "image",
+    "miniature": "./Images/Galerie/miniatures/IMG_20250717_101706.jpg.jpg"
+  },
+  {
+    "nom": "IMG_20250714_224154.jpg",
+    "chemin": "./Images/Galerie/IMG_20250714_224154.jpg",
+    "date": "2025-07-14T20:41:54.000Z",
+    "sourceDate": "exif",
+    "type": "image",
+    "miniature": "./Images/Galerie/miniatures/IMG_20250714_224154.jpg.jpg"
+  },
+  {
+    "nom": "IMG_20250714_223859.jpg",
+    "chemin": "./Images/Galerie/IMG_20250714_223859.jpg",
+    "date": "2025-07-14T20:38:59.000Z",
+    "sourceDate": "exif",
+    "type": "image",
+    "miniature": "./Images/Galerie/miniatures/IMG_20250714_223859.jpg.jpg"
+  },
+  {
+    "nom": "IMG_20250714_223511.jpg",
+    "chemin": "./Images/Galerie/IMG_20250714_223511.jpg",
+    "date": "2025-07-14T20:35:11.000Z",
+    "sourceDate": "exif",
+    "type": "image",
+    "miniature": "./Images/Galerie/miniatures/IMG_20250714_223511.jpg.jpg"
+  },
+  {
+    "nom": "IMG_20250611_115928.jpg",
+    "chemin": "./Images/Galerie/IMG_20250611_115928.jpg",
+    "date": "2025-06-11T09:59:28.000Z",
+    "sourceDate": "exif",
+    "type": "image",
+    "miniature": "./Images/Galerie/miniatures/IMG_20250611_115928.jpg.jpg"
+  },
+  {
+    "nom": "IMG_20250603_134022.jpg",
+    "chemin": "./Images/Galerie/IMG_20250603_134022.jpg",
+    "date": "2025-06-03T11:40:22.000Z",
+    "sourceDate": "exif",
+    "type": "image",
+    "miniature": "./Images/Galerie/miniatures/IMG_20250603_134022.jpg.jpg"
+  },
+  {
+    "nom": "IMG_20250527_191554.jpg",
+    "chemin": "./Images/Galerie/IMG_20250527_191554.jpg",
+    "date": "2025-05-27T17:15:54.000Z",
+    "sourceDate": "exif",
+    "type": "image",
+    "miniature": "./Images/Galerie/miniatures/IMG_20250527_191554.jpg.jpg"
+  },
+  {
+    "nom": "IMG_20250526_191811.jpg",
+    "chemin": "./Images/Galerie/IMG_20250526_191811.jpg",
+    "date": "2025-05-26T17:18:11.000Z",
+    "sourceDate": "exif",
+    "type": "image",
+    "miniature": "./Images/Galerie/miniatures/IMG_20250526_191811.jpg.jpg"
+  },
+  {
+    "nom": "IMG_20250518_002927.jpg",
+    "chemin": "./Images/Galerie/IMG_20250518_002927.jpg",
+    "date": "2025-05-17T22:29:28.000Z",
+    "sourceDate": "exif",
+    "type": "image",
+    "miniature": "./Images/Galerie/miniatures/IMG_20250518_002927.jpg.jpg"
+  },
+  {
+    "nom": "IMG_20240621_002336_576~2.jpg",
+    "chemin": "./Images/Galerie/IMG_20240621_002336_576~2.jpg",
+    "date": "2024-06-20T22:23:36.000Z",
+    "sourceDate": "nomFichier",
+    "type": "image",
+    "miniature": "./Images/Galerie/miniatures/IMG_20240621_002336_576~2.jpg.jpg"
+  }
+]
