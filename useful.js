@@ -1,5 +1,6 @@
 import { ecrans, state } from './data.js';
 import { actualiserMessages } from './gestionMessages.js';
+import { actualiserGalerie } from './gestionPhotos.js';
 
 export function afficher(n) {
     const liste_ecrans = document.querySelectorAll(".ecran");
@@ -17,6 +18,9 @@ export function afficher(n) {
         actualiserMessages(ecranActif);
         const l = document.querySelector(`#${n} .contacts`);
         l.scrollTop = 0;
+    }
+    if (ecranActif?.id === "galerie") {
+        actualiserGalerie();
     }
     if (n.startsWith("Conv")) {
         const l = document.querySelector(`#${n} .messages`);

@@ -354,6 +354,38 @@ ul {
 
     position: relative; 
 }
+.photo-conteneur {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    justify-content: space-between;
+    flex: 1;
+
+    gap: 2%;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 1%;
+
+    position: relative;
+    overflow-y: auto;
+    min-height: 0;
+
+    list-style-type: none;
+
+    scrollbar-width: thin;
+    scrollbar-color: steelblue skyblue;
+    /*scrollbar-width: none*/
+
+    touch-action: auto;
+}
+.photo {
+    box-sizing: border-box;
+    width: 100%;
+    aspect-ratio: 1/1;
+    border-radius: 10px;
+
+    object-fit: cover ;
+}
 .noselect {
     -webkit-user-select: none;
     user-select: none;

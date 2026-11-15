@@ -1,10 +1,14 @@
 import { afficher, updateTime, fitTime, notification, initGesture } from './useful.js';
 import { actualiserMessages } from './gestionMessages.js';
+import { chargerPhotos } from './gestionPhotos.js';
 import { creerWidget, creerNav } from './bars.js';
 import { creerEcrans } from './ecrans.js';
 import { ecrans } from './data.js';
 import { formeAccueil } from './finitionEcrans.js';
 
+chargerPhotos()
+    .then((mapPhotos) => console.log(`${mapPhotos.size} photos prêtes dans la galerie.`))
+    .catch((err) => console.error('Échec critique du chargement des photos :', err));
 
 const telephone = document.createElement("div");
 telephone.id = "telephone";

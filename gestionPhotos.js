@@ -1,29 +1,51 @@
-import { readdir, stat } from 'node:fs/promises';
-import { join } from 'node:path';
-import { ecrans, photos } from './data.js';
-import { afficher, initGesture } from './useful.js';
+import { photos } from './data.js';
 
-export async function listePhotos () {
-    const file = './Images/Galerie';
-    try {
-        // 1. Lire le contenu du dossier
-        const elements = await readdir(file, { withFileTypes: true });
+export async function chargerPhotos() {
+    const reponse = await fetch('./Images/Galerie/photos.json');
 
-        for (const e of elements) {
-        // Ignorer les sous-dossiers (ne garder que les fichiers)
-            if (e.isFile()) {
-                const cheminComplet = join(file, e.name);
-                
-                // 2. Récupérer les métadonnées du fichier
-                const stats = await stat(cheminComplet);
-
-                photos.set(e.name, stats.birthtime);
-            }
-        }
-        console.log(photos);
+    if (!reponse.ok) {
+        throw new Error(`Impossible de charger photos.json (HTTP ${reponse.status})`);
     }
-     
-    catch (err) {
-        console.error('Erreur lors de la lecture du dossier :', err);
+
+    const liste = await reponse.json();
+    photos.clear();
+
+    for (const item of liste) {
+        const dateParsed = item.date ? new Date(item.date) : null;
+        const dateValide = dateParsed && !Number.isNaN(dateParsed.getTime()) ? dateParsed : null;
+
+        photos.set(item.nom, {
+            chemin: item.chemin,
+            date: dateValide,
+            sourceDate: item.sourceDate
+        });
+    }
+
+    return photos;
+}
+
+export function actualiserGalerie() {
+    const section = document.getElementById("galerie");
+    if (!section) return;
+
+    let grille = section.querySelector('.photo-conteneur');
+    if (!grille) {
+        grille = document.createElement('div');
+        grille.className = 'photo-conteneur';
+        const boutons = section.querySelector('.conteneur');
+        if (boutons) section.insertBefore(grille, boutons);
+        else section.appendChild(grille);
+    }
+
+    grille.replaceChildren();
+
+    for (const [nom, info] of photos) {
+        const img = document.createElement('img');
+        img.src = info.chemin;
+        img.alt = nom;
+        img.loading = 'lazy';
+        img.decoding = 'async';
+        img.className = 'photo';
+        grille.appendChild(img);
     }
 }
