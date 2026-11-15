@@ -133,7 +133,7 @@ ul {
     display: flex;
     justify-content: space-between;
 
-    padding: 3%;
+    padding: 3% 3% 8% 3%;
     width: 100%;
     box-sizing: border-box;
 }
@@ -290,6 +290,29 @@ ul {
     overflow: hidden;
     white-space: nowrap;
 }
+.app {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 2%;
+
+    font-size: 3cqw;
+    color: white;
+    font-family: 'Comic Neue';
+    font-weight: 700;
+}
+.appLogo { 
+    box-sizing: border-box;
+    width: 50%;
+    aspect-ratio: auto;
+    border-radius: 15px;
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
 .conteneur {
     display: flex;
     flex-direction: row;
@@ -299,8 +322,8 @@ ul {
     justify-content: center; 
 }
 .accueil-conteneur {
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     align-items: center;
     justify-content: space-between;
 

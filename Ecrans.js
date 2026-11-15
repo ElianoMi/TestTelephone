@@ -5,7 +5,7 @@ export function creerEcrans() {
     const listEcrans = [];
 
     for (const e of ecrans) {
-        if (!e.ignore || !e.appli){
+        if (!e.ignore){
             const section = document.createElement("section");
             e.ignore = true;
             section.id = e.id;

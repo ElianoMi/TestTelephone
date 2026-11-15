@@ -27,6 +27,15 @@ export const ecrans = [
         titre:"Paramètres",},
 ]
 
+export const apps = [
+    {id: "galerie",
+        titre: "Photos",
+        icon: "photo",
+        background: "white",
+        position: [7, 1] //Row 6 (sur 8); Columns 1 (sur 4) (débute à 1)
+    },
+]
+
 export const state = {
     lastEcrans: ["accueil"],
     lastTriMessage: new Map(),

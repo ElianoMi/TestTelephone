@@ -36,13 +36,13 @@ initGesture(telephone, (gesture) => {
         setTimeout( () => {
             ecrans[indexMsgPage].messages.push(["Maman", 1, "Nouveau message 1", new Date()]);
             actualiserMessages(ecrans[indexMsgPage]);
-        }, 2000);
+        }, 10000);
 
         setTimeout( () => {
             ecrans[indexMsgPage].messages.push(["Téo", 1, "Nouveau message 2", new Date()]);
             actualiserMessages(ecrans[indexMsgPage]);
             notification("1 new message : \"Téo\" (et on essaie un très long message pour un tester les effets d'un overflow)", "messages");
-        }, 5000);
+        }, 15000);
     }
 });
 
