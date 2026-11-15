@@ -1,3 +1,5 @@
+//import { listePhotos } from './gestionPhotos.js';
+
 export const ecrans = [
     {id: "home",
         //titre: "Ecran de dévérouillage",
@@ -22,7 +24,8 @@ export const ecrans = [
                 ["Amélie", 0, "Message aléatoire pour tester le scroll", new Date(2023, 9, 21, 0, 0)],],
         screen: "messages"},
     {id: "galerie",
-        titre:"Galerie",},
+        titre:"Galerie",
+        screen: "galerie"},
     {id: "parametres",
         titre:"Paramètres",},
 ]
@@ -36,7 +39,8 @@ export const apps = [
     },
 ]
 
-export const photos = [];
+export const photos = new Map();
+//listePhotos();
 
 export const state = {
     lastEcrans: ["accueil"],

@@ -1,7 +1,7 @@
 import { afficher, updateTime, fitTime, notification, initGesture } from './useful.js';
 import { actualiserMessages } from './gestionMessages.js';
-import { creerWidget, creerNav } from './Bars.js';
-import { creerEcrans } from './Ecrans.js'
+import { creerWidget, creerNav } from './bars.js';
+import { creerEcrans } from './ecrans.js';
 import { ecrans } from './data.js';
 import { formeAccueil } from './finitionEcrans.js';
 
