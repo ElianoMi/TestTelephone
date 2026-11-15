@@ -70,8 +70,8 @@ ul {
     position: relative; 
 }
 .spaceBar {
-    width: 30%;
-    height: 30%;
+    width: 45%;
+    height: 15%;
     background-color: white;
     border-radius: 100vh;
 
@@ -132,9 +132,8 @@ ul {
 .en-tete-ecran {
     display: flex;
     justify-content: space-between;
-    flex: 1;
 
-    padding: 10% 1%;
+    padding: 3%;
     width: 100%;
     box-sizing: border-box;
 }
@@ -158,7 +157,7 @@ ul {
     justify-content: space-between;
     flex: 1;
     border-radius: 0px 0px 15px 15px;
-    padding: 20px;
+    padding: 3%;
     box-sizing: border-box;
     min-height: 0;
 }
@@ -298,6 +297,22 @@ ul {
     gap: 10px; 
     align-items: center;     /* centre sur l'axe transversal */
     justify-content: center; 
+}
+.accueil-conteneur {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+    height: 11%; /* 8 rangée sur l'écran d'acceuil, 100-6-5% restant pour l'écran */
+    box-sizing: border-box;
+
+    color: white;
+    padding: 1%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+    position: relative; 
 }
 .noselect {
     -webkit-user-select: none;

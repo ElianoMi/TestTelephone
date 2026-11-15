@@ -3,6 +3,7 @@ import { initGesture } from './gesture.js';
 import { creerWidget, creerNav } from './Bars.js';
 import { creerEcrans } from './Ecrans.js'
 import { ecrans } from './data.js';
+import { formeAccueil } from './finitionEcrans.js';
 
 
 const telephone = document.createElement("div");
@@ -13,6 +14,7 @@ telephone.appendChild(creerWidget());
 
 const listeEcrans = creerEcrans();
 for (let ecran of listeEcrans) telephone.appendChild(ecran);
+formeAccueil();
 
 updateTime();
 setInterval(updateTime, 1000);
