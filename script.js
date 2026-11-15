@@ -1,5 +1,5 @@
-import { afficher, updateTime, fitTime, actualiserMessages, notification } from './useful.js';
-import { initGesture } from './gesture.js';
+import { afficher, updateTime, fitTime, notification, initGesture } from './useful.js';
+import { actualiserMessages } from './gestionMessages.js';
 import { creerWidget, creerNav } from './Bars.js';
 import { creerEcrans } from './Ecrans.js'
 import { ecrans } from './data.js';

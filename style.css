@@ -26,13 +26,19 @@ ul {
     overflow: hidden;
 }
 #telephone h1 {
+    display: grid;
+    place-items: center;
     text-align: center;
-    margin: 0;
+    
+    margin: 1% 5%;
+    width: 90%;
+    height: 9%;
+    box-sizing: border-box;
 
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px); /* Pour la compatibilité Safari */
 
-    padding: 1px 10px;
+    padding: 2%;
     border-radius: 15px;
 }
 #widgetBar {
@@ -135,6 +141,7 @@ ul {
 
     padding: 3% 3% 8% 3%;
     width: 100%;
+    height: 22%;
     box-sizing: border-box;
 }
 .en-tete-ecran .time { padding: 0; }
@@ -156,6 +163,8 @@ ul {
     flex-direction: column;
     justify-content: space-between;
     flex: 1;
+
+    margin-top: 5%;
     border-radius: 0px 0px 15px 15px;
     padding: 3%;
     box-sizing: border-box;
@@ -307,7 +316,7 @@ ul {
     box-sizing: border-box;
     width: 50%;
     aspect-ratio: auto;
-    border-radius: 15px;
+    border-radius: 10px;
 
     background-size: cover;
     background-position: center;
@@ -320,6 +329,14 @@ ul {
     gap: 10px; 
     align-items: center;     /* centre sur l'axe transversal */
     justify-content: center; 
+
+    width: 100%;
+    height: 11%; /* 8 rangée sur l'écran d'acceuil, 100-6-5% restant pour l'écran */
+    box-sizing: border-box;
+
+    color: white;
+    padding: 1%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 .accueil-conteneur {
     display: grid;

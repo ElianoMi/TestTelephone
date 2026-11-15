@@ -1,5 +1,4 @@
-import { initGesture } from './gesture.js';
-import { afficher } from './useful.js';
+import { afficher, initGesture } from './useful.js';
 import { state } from './data.js';
 
 export function creerWidget() {

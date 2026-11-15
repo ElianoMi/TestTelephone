@@ -1,6 +1,5 @@
 import { apps } from './data.js';
-import { afficher } from './useful.js';
-import { initGesture } from './gesture.js';
+import { afficher, initGesture } from './useful.js';
 
 function remplirCase (bloc, col ) {
     for (const i of col){
@@ -22,7 +21,7 @@ export function formeAccueil() {
     pos.set( 5, [0, 0, 0, 0]);
     pos.set( 6, [0, 0, 0, 0]);
     pos.set( 7, [0, 0, 0, 0]);
-    pos.set( 8, [0, 0, 0, 0]);
+    //pos.set( 8, [0, 0, 0, 0]);
 
     const blocAppli2 = document.createElement("div");
     blocAppli2.className = 'accueil-conteneur';
@@ -45,12 +44,12 @@ export function formeAccueil() {
 
     const blocAppli7 = document.createElement("div");
     blocAppli7.className = 'accueil-conteneur';
-
-    const blocAppli8 = document.createElement("div");
-    blocAppli8.className = 'accueil-conteneur';
     const spaceBar = document.createElement("div");
     spaceBar.className = 'spaceBar';
-    blocAppli8.appendChild(spaceBar);
+    blocAppli7.appendChild(spaceBar);
+
+    //const blocAppli8 = document.createElement("div");
+    //blocAppli8.className = 'accueil-conteneur';
     
     for( const a of apps ) {
         const app = document.createElement("div");
@@ -77,18 +76,18 @@ export function formeAccueil() {
 
     remplirCase(blocAppli2, pos.get(2));
     remplirCase(blocAppli5, pos.get(5));
-    remplirCase(blocAppli7, pos.get(7));
+    remplirCase(blocAppli6, pos.get(6));
 
     if (boutons) {
         accueil.insertBefore(blocAppli5, boutons);
         accueil.insertBefore(blocAppli6, boutons);
         accueil.insertBefore(blocAppli7, boutons);
-        accueil.insertBefore(blocAppli8, boutons);
+        //accueil.insertBefore(blocAppli8, boutons);
     }
     else {
         accueil.appendChild(blocAppli5);
         accueil.appendChild(blocAppli6);
         accueil.appendChild(blocAppli7);
-        accueil.appendChild(blocAppli8);
+        //accueil.appendChild(blocAppli8);
     }
 }
