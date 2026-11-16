@@ -35,6 +35,8 @@ ul {
     height: 9%;
     box-sizing: border-box;
 
+    font-size: 9cqw;
+
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px); /* Pour la compatibilité Safari */
 
@@ -55,6 +57,7 @@ ul {
     background: rgba(0,0,0,50%);
     color: white;
     padding: 7px 15px;
+    font-size: 4.5cqw;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 
     position: relative; 
@@ -177,7 +180,7 @@ ul {
     color: silver;
     padding: 5px;
     border-radius: 8px;
-    font-size: 20px;
+    font-size: 5cqw;
 }
 .contacts {
     display: flex;
