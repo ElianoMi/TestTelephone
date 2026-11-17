@@ -1,4 +1,5 @@
 import { apps } from './data.js';
+import { creerGoogleBar } from './bars.js';
 import { afficher, initGesture } from './useful.js';
 
 function remplirCase (bloc, col ) {
@@ -21,20 +22,18 @@ export function formeAccueil() {
     pos.set( 5, [0, 0, 0, 0]);
     pos.set( 6, [0, 0, 0, 0]);
     pos.set( 7, [0, 0, 0, 0]);
-    //pos.set( 8, [0, 0, 0, 0]);
+    pos.set( 8, [0, 0, 0, 0]);
+
+    const blocAppli1 = document.createElement("div");
+    blocAppli1.className = 'accueil-conteneur';
+    blocAppli1.appendChild(creerGoogleBar());
 
     const blocAppli2 = document.createElement("div");
     blocAppli2.className = 'accueil-conteneur';
 
-    if (horloge) accueil.insertBefore(blocAppli2, horloge);
-    else {
-        if (boutons) accueil.insertBefore(blocAppli2, boutons);
-        else accueil.appendChild(blocAppli2);
-    }
-
-    //L'horloge occupe environ 2 rangées
-    //Le titre occupe environ 1 rangée
-    //Les boutons occupent environ 1 rangée
+    //L'horloge occupe 2 rangées
+    //Le titre occupe 1 rangée
+    //Les boutons occupent 1 rangée
     //Il reste 4 rangés
     const blocAppli5 = document.createElement("div");
     blocAppli5.className = 'accueil-conteneur';
@@ -48,8 +47,8 @@ export function formeAccueil() {
     spaceBar.className = 'spaceBar';
     blocAppli7.appendChild(spaceBar);
 
-    //const blocAppli8 = document.createElement("div");
-    //blocAppli8.className = 'accueil-conteneur';
+    const blocAppli8 = document.createElement("div");
+    blocAppli8.className = 'accueil-conteneur';
     
     for( const a of apps ) {
         const app = document.createElement("div");
@@ -57,7 +56,7 @@ export function formeAccueil() {
         const logoApp = document.createElement("img");
         logoApp.src = `./Images/Logos/${a.icon}.png`;
         logoApp.className = 'appLogo';
-        logoApp.style.background = a.background;
+        if (a.background) logoApp.style.background = a.background;
         const nomApp = document.createElement("span");
         nomApp.textContent = a.titre;
         app.appendChild(logoApp);
@@ -69,25 +68,35 @@ export function formeAccueil() {
 
         initGesture(app, (gesture) => {
             if (gesture === 'Tap') {
-                afficher(a.id);
+                if (a.url) open(a.url, "_blank", "noopener");
+                else afficher(a.id);
             }
         });
     }
 
+    remplirCase(blocAppli1, pos.get(1));
     remplirCase(blocAppli2, pos.get(2));
     remplirCase(blocAppli5, pos.get(5));
     remplirCase(blocAppli6, pos.get(6));
+    remplirCase(blocAppli8, pos.get(8));
+
+    if (horloge) accueil.insertBefore(blocAppli2, horloge);
+    else {
+        if (boutons) accueil.insertBefore(blocAppli2, boutons);
+        else accueil.appendChild(blocAppli2);
+    }
+    accueil.insertBefore(blocAppli1, blocAppli2);
 
     if (boutons) {
         accueil.insertBefore(blocAppli5, boutons);
         accueil.insertBefore(blocAppli6, boutons);
         accueil.insertBefore(blocAppli7, boutons);
-        //accueil.insertBefore(blocAppli8, boutons);
+        accueil.insertBefore(blocAppli8, boutons);
     }
     else {
         accueil.appendChild(blocAppli5);
         accueil.appendChild(blocAppli6);
         accueil.appendChild(blocAppli7);
-        //accueil.appendChild(blocAppli8);
+        accueil.appendChild(blocAppli8);
     }
 }

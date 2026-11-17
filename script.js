@@ -3,7 +3,7 @@ import { actualiserMessages } from './gestionMessages.js';
 import { chargerPhotos } from './gestionPhotos.js';
 import { creerWidget, creerNav } from './bars.js';
 import { creerEcrans } from './ecrans.js';
-import { ecrans } from './data.js';
+import { ecrans, state } from './data.js';
 import { formeAccueil } from './finitionEcrans.js';
 
 chargerPhotos()
@@ -45,7 +45,8 @@ initGesture(telephone, (gesture) => {
         setTimeout( () => {
             ecrans[indexMsgPage].messages.push(["Téo", 1, "Nouveau message 2", new Date()]);
             actualiserMessages(ecrans[indexMsgPage]);
-            notification("1 new message : \"Téo\" (et on essaie un très long message pour un tester les effets d'un overflow)", "messages");
+            const idTeo = state.dataParing.get("Téo")[1];
+            notification("1 new message : \"Téo\" (et on essaie un très long message pour un tester les effets d'un overflow)", idTeo);
         }, 15000);
     }
 });

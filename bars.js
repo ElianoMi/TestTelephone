@@ -102,3 +102,43 @@ export function creerNav() {
 
     return navbar;
 }
+
+export function creerGoogleBar() {
+    const googlebar = document.createElement("div");
+    googlebar.id = "googlebar";
+    googlebar.className = 'googleBar noselect';
+
+    const logoGoogle = document.createElement("img");
+    logoGoogle.id = "logoGoogle";
+    logoGoogle.className = 'status';
+    logoGoogle.src = './Images/Logos/google.png';
+    googlebar.appendChild(logoGoogle);
+
+    const recherches = document.createElement("div");
+    recherches.className = 'statusBar';
+    const micro = document.createElement("img");
+    micro.id = "micro";
+    micro.className = 'status';
+    micro.src = './Images/Logos/micro.png';
+    recherches.appendChild(micro);
+    
+    const space = document.createElement("img");
+    recherches.appendChild(space);
+
+    const lens = document.createElement("img");
+    lens.id = "lens";
+    lens.className = 'status';
+    lens.src = './Images/Logos/lens.png';
+    recherches.appendChild(lens);
+    
+    googlebar.appendChild(recherches);
+    
+    initGesture(googlebar, (gesture) => {
+        if (gesture === 'Tap') {
+            afficher("google");
+        }
+    });
+
+
+    return googlebar;
+}

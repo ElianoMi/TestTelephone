@@ -11,7 +11,7 @@ export function creerEcrans() {
             section.id = e.id;
             section.className = 'cache ecran noselect';
 
-            if (e.titre) {
+            if (e.titre && e.titre !== "No") {
                 const h1 = document.createElement("h1");
                 h1.textContent = e.titre;
                 section.appendChild(h1);
@@ -57,13 +57,14 @@ export function creerEcrans() {
                 contacts.className = 'contacts';
                 section.appendChild(contacts);
             }
-
-            const div2 = document.createElement("div");
-            div2.className = 'conteneur';
-            if (!e.noNavigation) {
+            
+            /*
+            if (e.navigateFrom) {
+                const div2 = document.createElement("div");
+                div2.className = 'conteneur';
                 for (const ec of ecrans) {
                     if (ec.id === e.id) continue;
-                    if (ec.noNavigation) continue;
+                    if (!ec.navigateTo) continue;
                     const button = document.createElement("button");
                     button.className = 'bouton';
                     button.textContent = ec.titre;
@@ -71,9 +72,10 @@ export function creerEcrans() {
 
                     div2.appendChild(button);
                 }
+                section.appendChild(div2);
             }
-            section.appendChild(div2);
-
+            */
+           
             listEcrans.push(section);
         }
     }
