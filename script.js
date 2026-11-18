@@ -73,6 +73,7 @@ updateTime();
 setInterval(updateTime, 1000);
 
 afficher("home", ecransVerrouillage);
+swiper1.update();
 
 //On gére la taille des horloge. Une fois par heure est suffisant car pas de gros changements
 fitTime();
