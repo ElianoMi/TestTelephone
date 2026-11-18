@@ -42,9 +42,9 @@ ul {
     --swiper-pagination-color: rgb(230, 230, 230);
     --swiper-pagination-bullet-width: 15cqw;
     --swiper-pagination-bullet-border-radius: 999px;
-    --swiper-pagination-bullet-inactive-color: rgb(190, 190, 190);
+    --swiper-pagination-bullet-inactive-color: rgb(150, 150, 150);
     --swiper-pagination-bullet-inactive-opacity: 50;
-    --swiper-pagination-bullet-inactive-width: 10cqw;
+    --swiper-pagination-bullet-inactive-width: 8cqw;
 }
 #telephone h1 {
     display: grid;
@@ -104,25 +104,6 @@ ul {
     height: 12%;
     background-color: white;
     border-radius: 100vh;
-
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-}
-.googleBar {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    
-    width: 90%;
-    height: 60%;
-    background-color: rgba(47, 47, 47, 95%);
-    border-radius: 100vh;
-
-    padding: 2.5% 4% 2.5% 3%;
-    box-sizing: border-box;
 
     position: absolute;
     left: 50%;
@@ -218,12 +199,10 @@ ul {
     flex-shrink: 0;
     flex-basis: 100%;
 }
-.cache {display: none;}
-.ecran.cache {display: none;}
+.cache {display: none !important;}
 .swiper-wrapper:not(:has(.swiper-slide:not(.cache))) {
     display: none;
 }
-#telephone.cache, #telephone-verrou.cache, #widgetBar.cache {display: none;}
 .contacts {
     display: flex;
     flex-direction: column;
@@ -359,13 +338,24 @@ ul {
 }
 .appLogo { 
     box-sizing: border-box;
-    width: calc( var(--rangee) - 10cqw );
+    width: calc( var(--rangee) * 0.6 );
     aspect-ratio: 1/1;
     border-radius: 10px;
 
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+}
+.appLogo.large {
+    width: 80%;
+    height: calc( var(--rangee) * var(--hauteur) * 0.9);
+    aspect-ratio: auto;
+    object-fit: cover;
+    border-radius: 20px;
+}
+.appLogo.pilule {
+    height: calc(var(--rangee) * 0.5);
+    width: 95%;
 }
 .conteneur {
     display: flex;
@@ -383,21 +373,13 @@ ul {
     padding: 1%;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
-.accueil-conteneur {
+.accueil-grille {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    grid-template-rows:repeat(6, var(--rangee));
     align-items: center;
-    justify-content: space-between;
-
     width: 100%;
-    height: var(--rangee); /* 8 rangée sur l'écran d'acceuil, 100-6-5% restant pour l'écran */
     box-sizing: border-box;
-
-    color: white;
-    padding: 1%;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-
-    position: relative; 
 }
 .bottomAccueil-conteneur {
     display: grid;

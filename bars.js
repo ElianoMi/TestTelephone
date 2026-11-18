@@ -46,7 +46,7 @@ export function creerNav() {
 
     const navbar = document.createElement("div");
     navbar.id = "navBar";
-    navbar.className = 'navBar cache';
+    navbar.className = 'navBar';
 
 
     const previous = document.createElementNS(SVG_NS, "svg");

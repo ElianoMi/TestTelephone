@@ -33,13 +33,15 @@ export function afficher(n, liste_e = ecrans) {
     }
 
     const bottomAccueil = document.getElementById("bottomAccueil");
+    const pagination = document.getElementById("pagination");
     state.lastEcrans.push(n);
     if (n === "accueil") {
         bottomAccueil.classList.remove('cache');
+        pagination.classList.remove('cache');
         state.swiper.slideTo(0, 500);
         state.lastEcrans.splice(0, state.lastEcrans.length, "accueil");
     }
-    else bottomAccueil.classList.add('cache');
+    else { bottomAccueil.classList.add('cache'); pagination.classList.add('cache'); }
 
     fitTime();
 };

@@ -47,6 +47,12 @@ export const ecransVerrouillage = [
 ]
 
 export const apps = [
+    {id: "google", 
+        icon: "googleBar", 
+        position: [1, 1], 
+        span: 4, 
+        large: true, 
+        pilule: true,},
     {id: "galerie",
         titre: "Photos",
         icon: "photo",
@@ -80,6 +86,9 @@ export const apps = [
     {id: "parametre",
         titre: "Paramètres",
         icon: "parametre",
+        span: 2,
+        hauteur: 2,
+        large: true, 
         background: "rgb(24, 129, 197)",
         position: [7, 1],
     },

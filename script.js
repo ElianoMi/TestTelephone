@@ -43,6 +43,7 @@ for (let ecran of listeEcrans[1]) telephone.appendChild(ecran);
 telephone.appendChild(wrapper);
 
 const pagination = document.createElement("div");
+pagination.id = "pagination";
 pagination.className = 'swiper-pagination';
 telephone.appendChild(pagination);
 
