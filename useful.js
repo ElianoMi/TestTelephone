@@ -2,15 +2,19 @@ import { ecrans, state } from './data.js';
 import { actualiserMessages } from './gestionMessages.js';
 import { actualiserGalerie } from './gestionPhotos.js';
 
-export function afficher(n) {
+export function afficher(n, liste_e = ecrans) {
     const liste_ecrans = document.querySelectorAll(".ecran");
+    const ecranActif = liste_e.find(e => e.id === n);
+    const telephone = (liste_e === ecrans) 
+        ? document.getElementById("telephone")
+        : document.getElementById("telephone-verrou") ;
 
     liste_ecrans.forEach( ecran => {
         ecran.classList.toggle("cache", ecran.id !== n);
+
+        if (ecranActif.swipe && ecran.dataset.swipe === String(ecranActif.swipe)) ecran.classList.remove('cache');
     });
 
-    const ecranActif = ecrans.find(e => e.id === n);
-    const telephone = document.getElementById("telephone");
     telephone.style.background = (ecranActif?.screen)
         ? `url('./Images/Fronts/${ecranActif?.screen}.jpg') center/cover`
         : "lightblue";
@@ -27,7 +31,10 @@ export function afficher(n) {
         l.scrollTop = l.scrollHeight;
     }
     state.lastEcrans.push(n);
-    if (n === "accueil") state.lastEcrans.splice(0, state.lastEcrans.length, "accueil");
+    if (n === "accueil") {
+        state.swiper.slideTo(0, 500);
+        state.lastEcrans.splice(0, state.lastEcrans.length, "accueil");
+    }
 
     fitTime();
 };
@@ -52,12 +59,12 @@ export const updateTime = () => {
 };
 
 export function fitTime() {
-    const tel = document.getElementById('telephone');
-    const longueur = tel.clientWidth;
-
     const ecransActifs = document.querySelectorAll('.ecran:not(.cache)');
     
     ecransActifs.forEach(ecran => {
+        const tel = ecran.closest("body > div");
+        const longueur = tel.clientWidth;
+
         const time = ecran.querySelector('.time');
         if (!time) return;
 

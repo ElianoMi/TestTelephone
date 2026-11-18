@@ -1,3 +1,4 @@
+:root { --rangee: 12%; }
 body {
     display: flex;
     align-items: center;
@@ -11,7 +12,7 @@ ul {
     display: flex;
     flex-direction: column;
 }
-#telephone {
+#telephone, #telephone-verrou {
     display: flex;
     flex-direction: column;
     position: relative;
@@ -143,18 +144,18 @@ ul {
     flex-direction: column;
     align-self: flex-start;
 
-    margin: 0;
     padding: 20px 5px;
     text-transform: capitalize;
     word-spacing: -20%;
 }
 .time > * { 
-    margin: -4%;
+    margin: -2%;
     white-space: nowrap;
     width: max-content;
 }
 .time h2 { font-size: 10cqw; font-weight: inherit; }
 .time h3 { font-size: 5.8cqw; font-weight: inherit; }
+.big.time { margin-left: 3%; }
 .big.time h2 { font-size: 18cqw; }
 .big.time h3 { font-size: 10cqw; }
 .en-tete-ecran {
@@ -163,7 +164,7 @@ ul {
 
     padding: 3% 3% 8% 3%;
     width: 100%;
-    height: 23%;
+    height: calc(2*var(--rangee));
     box-sizing: border-box;
 }
 .en-tete-ecran .time { padding: 0; }
@@ -192,8 +193,17 @@ ul {
     box-sizing: border-box;
     min-height: 0;
 }
+.swiper-slide.ecran {
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 100%;
+}
 .cache {display: none;}
 .ecran.cache {display: none;}
+.swiper-wrapper:not(:has(.swiper-slide:not(.cache))) {
+    display: none;
+}
+#telephone.cache, #telephone-verrou.cache, #widgetBar.cache {display: none;}
 .bouton {
     background: blue;
     color: silver;
@@ -367,7 +377,7 @@ ul {
     justify-content: space-between;
 
     width: 100%;
-    height: 13%; /* 8 rangée sur l'écran d'acceuil, 100-6-5% restant pour l'écran */
+    height: var(--rangee); /* 8 rangée sur l'écran d'acceuil, 100-6-5% restant pour l'écran */
     box-sizing: border-box;
 
     color: white;

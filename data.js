@@ -1,10 +1,13 @@
 export const ecrans = [
-    {id: "home",
-        horloge: true,
-        screen: "lockscreen",},
     {id: "accueil", 
         titre: "No",
         horloge: true,
+        swipe: 2,
+        screen: "homeScreen",},
+    {id: "accueil2", 
+        titre: "No",
+        horloge: false,
+        swipe: 2,
         screen: "homeScreen",},
     {id: "messages",
         titre:"Messages", 
@@ -29,6 +32,18 @@ export const ecrans = [
         screen: "playStore"},
     {id: "youtubeMusic",
         screen: "youtubeMusic"},
+    {id: "parametre",
+        screen: "parametre"},
+]
+
+export const ecransVerrouillage = [
+    {id: "home",
+        horloge: true,
+        swipe: 1,
+        screen: "lockscreen",},
+    {id: "noScreen", 
+        swipe: 1,
+        screen: "lockscreen",},
 ]
 
 export const apps = [
@@ -62,6 +77,12 @@ export const apps = [
         background: "white",
         position: [5, 1],
     },
+    {id: "parametre",
+        titre: "Paramètres",
+        icon: "parametre",
+        background: "rgb(24, 129, 197)",
+        position: [9, 1],
+    },
 ]
 
 export const photos = new Map();
@@ -71,6 +92,7 @@ export const state = {
     lastTriMessage: new Map(),
     dataParing: new Map(),
     lastId: -1,
+    swiper: null,
 };
 
 const options = {

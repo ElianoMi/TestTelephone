@@ -1,15 +1,14 @@
-import { ecrans } from './data.js';
-import { afficher } from './useful.js';
-
-export function creerEcrans() {
-    const listEcrans = [];
+export function creerEcrans(ecrans) {
+    const listEcrans = [[], []];
 
     for (const e of ecrans) {
         if (!e.ignore){
             const section = document.createElement("section");
             e.ignore = true;
+            section.dataset.swipe = String(e.swipe);
             section.id = e.id;
             section.className = 'cache ecran noselect';
+            if ( e.swipe ) section.classList.add('swiper-slide');
 
             if (e.titre && e.titre !== "No") {
                 const h1 = document.createElement("h1");
@@ -57,26 +56,13 @@ export function creerEcrans() {
                 contacts.className = 'contacts';
                 section.appendChild(contacts);
             }
-            
-            /*
-            if (e.navigateFrom) {
-                const div2 = document.createElement("div");
-                div2.className = 'conteneur';
-                for (const ec of ecrans) {
-                    if (ec.id === e.id) continue;
-                    if (!ec.navigateTo) continue;
-                    const button = document.createElement("button");
-                    button.className = 'bouton';
-                    button.textContent = ec.titre;
-                    button.onclick = () => afficher(ec.id);
-
-                    div2.appendChild(button);
-                }
-                section.appendChild(div2);
+            if (e.swipe === 2) {
+                const pagination = document.createElement("div");
+                pagination.className = 'swiper-pagination';
+                section.appendChild(pagination);
             }
-            */
-           
-            listEcrans.push(section);
+            if (e.swipe) listEcrans[0].push(section);
+            else listEcrans[1].push(section);
         }
     }
 

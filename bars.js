@@ -96,7 +96,7 @@ export function creerNav() {
     navbar.appendChild(app);
 
     initGesture(app, (gesture) => {
-        if (gesture === 'Tap') {afficher("accueil");}
+        if (gesture === 'Tap' && state.lastEcrans.at(-1) !== "accueil") {afficher("accueil");}
     });
 
 
