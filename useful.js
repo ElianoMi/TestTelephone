@@ -18,23 +18,28 @@ export function afficher(n, liste_e = ecrans) {
     telephone.style.background = (ecranActif?.screen)
         ? `url('./Images/Fronts/${ecranActif?.screen}.jpg') center/cover`
         : "lightblue";
+    
     if (ecranActif?.messages) {
         actualiserMessages(ecranActif);
         const l = document.querySelector(`#${n} .contacts`);
         l.scrollTop = 0;
     }
-    if (ecranActif?.id === "galerie") {
-        actualiserGalerie();
-    }
+
+    if (ecranActif?.id === "galerie") actualiserGalerie();
+
     if (n.startsWith("Conv")) {
         const l = document.querySelector(`#${n} .messages`);
         l.scrollTop = l.scrollHeight;
     }
+
+    const bottomAccueil = document.getElementById("bottomAccueil");
     state.lastEcrans.push(n);
     if (n === "accueil") {
+        bottomAccueil.classList.remove('cache');
         state.swiper.slideTo(0, 500);
         state.lastEcrans.splice(0, state.lastEcrans.length, "accueil");
     }
+    else bottomAccueil.classList.add('cache');
 
     fitTime();
 };

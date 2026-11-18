@@ -142,3 +142,12 @@ export function creerGoogleBar() {
 
     return googlebar;
 }
+
+export function creerBottomAccueil() {
+    //Le bas de la page d'acceuil est indépendant du scroll
+    const bottomAccueil = document.createElement("div");
+    bottomAccueil.className = 'bottomAccueil-conteneur cache';
+    bottomAccueil.id = "bottomAccueil";
+
+    return bottomAccueil;
+}

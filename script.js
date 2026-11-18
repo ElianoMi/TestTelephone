@@ -1,7 +1,7 @@
-import { afficher, updateTime, fitTime, notification, initGesture } from './useful.js';
+import { afficher, updateTime, fitTime, notification } from './useful.js';
 import { actualiserMessages } from './gestionMessages.js';
 import { chargerPhotos } from './gestionPhotos.js';
-import { creerWidget, creerNav } from './bars.js';
+import { creerWidget, creerNav, creerBottomAccueil } from './bars.js';
 import { creerEcrans } from './ecrans.js';
 import { ecrans, ecransVerrouillage, state } from './data.js';
 import { formeAccueil } from './finitionEcrans.js';
@@ -40,26 +40,31 @@ telephone.appendChild(creerWidget());
 const listeEcrans = creerEcrans(ecrans);
 for (let ecran of listeEcrans[0]) wrapper.appendChild(ecran);
 for (let ecran of listeEcrans[1]) telephone.appendChild(ecran);
-
 telephone.appendChild(wrapper);
+
+const pagination = document.createElement("div");
+pagination.className = 'swiper-pagination';
+telephone.appendChild(pagination);
+
+telephone.appendChild(creerBottomAccueil());
 telephone.appendChild(creerNav());
 
 document.body.append(telephone);
 
-
+creerBottomAccueil();
 formeAccueil();
 
 state.swiper = new Swiper('.mySwiper', {
-        effect: 'creative',
-        pagination: {
-            el: '.swiper-pagination',
-            dynamicBullets: true,
-        },
-        creativeEffect: {
-            prev: { shadow: true, translate: [0, 0, -400], opacity: 0,},
-            next: { translate: ['100%', 0, 0], },
-        },
-      });
+    effect: 'creative',
+    pagination: {
+        el: pagination,
+        dynamicBullets: true,
+    },
+    creativeEffect: {
+        prev: { shadow: true, translate: [0, 0, -400], opacity: 0,},
+        next: { translate: ['100%', 0, 0], },
+    },
+});
 
 //On met les pendules à l'heure... littéralement.
 //On actualise chaque secondes, pour être le moins possible en décalage avec la vraie heure.
@@ -78,6 +83,7 @@ swiper1.on('slideChangeTransitionEnd', (swiper) => {
     telephone.classList.remove('cache');
 
     afficher("accueil");
+    state.swiper.update();
 
     const indexMsgPage = ecrans.findIndex(e => e.id === "messages");
 

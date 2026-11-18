@@ -1,4 +1,14 @@
-:root { --rangee: 12%; }
+:root {
+    --tel-h: calc(100cqw * 16 / 9);   /* hauteur du téléphone */
+    --rangee: calc(
+        (var(--tel-h)
+            - 5 * var(--tel-h) / 100
+            - 6 * var(--tel-h) / 100
+            - 5cqw
+            - 6cqw
+        ) / 7
+    );
+} /* widget + nav + marginEcran + paddingEcran */
 body {
     display: flex;
     align-items: center;
@@ -25,6 +35,16 @@ ul {
 
     touch-action: none;
     overflow: hidden;
+}
+#telephone .swiper-pagination {
+    --swiper-pagination-bottom: calc( (6 * var(--tel-h) / 100) + var(--rangee) + 2cqw ); /* navBar + bottomAccueil */
+    --swiper-pagination-bullet-size: 3cqw;
+    --swiper-pagination-color: rgb(230, 230, 230);
+    --swiper-pagination-bullet-width: 15cqw;
+    --swiper-pagination-bullet-border-radius: 999px;
+    --swiper-pagination-bullet-inactive-color: rgb(190, 190, 190);
+    --swiper-pagination-bullet-inactive-opacity: 50;
+    --swiper-pagination-bullet-inactive-width: 10cqw;
 }
 #telephone h1 {
     display: grid;
@@ -204,13 +224,6 @@ ul {
     display: none;
 }
 #telephone.cache, #telephone-verrou.cache, #widgetBar.cache {display: none;}
-.bouton {
-    background: blue;
-    color: silver;
-    padding: 5px;
-    border-radius: 8px;
-    font-size: 5cqw;
-}
 .contacts {
     display: flex;
     flex-direction: column;
@@ -346,8 +359,8 @@ ul {
 }
 .appLogo { 
     box-sizing: border-box;
-    width: 50%;
-    aspect-ratio: auto;
+    width: calc( var(--rangee) - 10cqw );
+    aspect-ratio: 1/1;
     border-radius: 10px;
 
     background-size: cover;
@@ -378,6 +391,22 @@ ul {
 
     width: 100%;
     height: var(--rangee); /* 8 rangée sur l'écran d'acceuil, 100-6-5% restant pour l'écran */
+    box-sizing: border-box;
+
+    color: white;
+    padding: 1%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+    position: relative; 
+}
+.bottomAccueil-conteneur {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+    height: var(--rangee);
     box-sizing: border-box;
 
     color: white;

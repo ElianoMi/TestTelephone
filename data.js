@@ -57,7 +57,7 @@ export const apps = [
         titre: "Messages",
         icon: "messages",
         background: "white",
-        position: [8, 2],
+        position: [-1, 2],
     },
     {id: "instagram",
         titre: "Instagram",
@@ -81,7 +81,7 @@ export const apps = [
         titre: "Paramètres",
         icon: "parametre",
         background: "rgb(24, 129, 197)",
-        position: [9, 1],
+        position: [7, 1],
     },
 ]
 
