@@ -5,6 +5,7 @@ import { creerWidget, creerNav, creerBottomAccueil } from './bars.js';
 import { creerEcrans } from './ecrans.js';
 import { ecrans, ecransVerrouillage, state } from './data.js';
 import { formeAccueil } from './finitionEcrans.js';
+import { actualiserNote } from './gestionNotes.js';
 
 chargerPhotos()
     .catch((err) => console.error('Échec critique du chargement des photos :', err));
@@ -78,6 +79,9 @@ swiper1.update();
 //On gére la taille des horloge. Une fois par heure est suffisant car pas de gros changements
 fitTime();
 setInterval(fitTime, 3600000);
+
+
+actualiserNote(ecrans.find(e => e.id === "note"));
 
 //Une fois le téléphone dévérouillé, la partie commence
 swiper1.on('slideChangeTransitionEnd', (swiper) => {

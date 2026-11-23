@@ -323,6 +323,71 @@ ul {
     overflow: hidden;
     white-space: nowrap;
 }
+.notes {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    flex: 1;
+
+    padding: 0;
+    margin: 20px 0px 0px 0px;
+    gap: 2px;
+    width: 100%;
+    
+    box-sizing: border-box;
+
+    overflow-y: auto;
+    min-height: 0;
+
+    list-style-type: none;
+
+    scrollbar-width: thin;
+    scrollbar-color: steelblue skyblue;
+    /*scrollbar-width: none*/
+
+    touch-action: auto;
+}
+.note {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 100%;
+    padding: 5% 8%;
+    border-radius: 15px;
+    word-wrap: break-word;
+
+    background-color: rgba(100, 100, 100, 60%);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 2.5dvh;
+    color: white;
+    box-sizing: border-box;
+}
+.poeme {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    flex: 1;
+
+    padding: 0;
+    margin: 20px 0px 0px 0px;
+    gap: 2px;
+    width: 100%;
+    
+    box-sizing: border-box;
+
+    overflow-y: auto;
+    min-height: 0;
+
+    color: white;
+    white-space: pre-wrap;
+
+    scrollbar-width: none;
+    touch-action: auto;
+}
 .app {
     display: flex;
     flex-direction: column;
@@ -392,7 +457,7 @@ ul {
     box-sizing: border-box;
 
     color: white;
-    padding: 1%;
+    padding: 1% 11%;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 
     position: relative; 

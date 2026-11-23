@@ -17,11 +17,17 @@ export function afficher(n, liste_e = ecrans) {
 
     telephone.style.background = (ecranActif?.screen)
         ? `url('./Images/Fronts/${ecranActif?.screen}.jpg') center/cover`
-        : "lightblue";
+        : (ecranActif?.background)
+            ? ecranActif.background
+            : "lightblue";
     
     if (ecranActif?.messages) {
         actualiserMessages(ecranActif);
         const l = document.querySelector(`#${n} .contacts`);
+        l.scrollTop = 0;
+    }
+    if (ecranActif?.note) {
+        const l = document.querySelector(`#${n} .notes`);
         l.scrollTop = 0;
     }
 

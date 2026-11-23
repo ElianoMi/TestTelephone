@@ -13,6 +13,7 @@ export function creerEcrans(ecrans) {
             if (e.titre && e.titre !== "No") {
                 const h1 = document.createElement("h1");
                 h1.textContent = e.titre;
+                if (e.titleColor) h1.style.color = e.titleColor;
                 section.appendChild(h1);
             }
 
@@ -55,6 +56,11 @@ export function creerEcrans(ecrans) {
                 const contacts = document.createElement("ul");
                 contacts.className = 'contacts';
                 section.appendChild(contacts);
+            }
+            if (e.note) {
+                const note = document.createElement("ul");
+                note.className = 'notes';
+                section.appendChild(note);
             }
             if (e.swipe === 2) {
                 const pagination = document.createElement("div");

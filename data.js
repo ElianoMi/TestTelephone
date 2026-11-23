@@ -44,6 +44,47 @@ export const ecrans = [
         screen: "youtubeMusic"},
     {id: "parametre",
         screen: "parametre"},
+    {id: "note",
+        titre: "Note",
+        background: "black",
+        titleColor: "white",
+        note: [["Prologue", `Tandis que la vie est souvent brute avec nous,
+Qu'elle n'a de cesse de nous faire des coups bas,
+Qu'elle s'échine à vouloir nous mettre à genoux
+Et que sur la violence elle ne lésine pas
+Il faut savoir trouver de la joie malgré tout,
+Trouver une lueur dans cette obscurité,
+S'inventer une raison de rester debout
+Et faire face à toutes ces difficultés.
+
+C'est pourquoi je me suis fixé une mission :
+Aider les autres à garder cette lumière,
+Apporter la bonne humeur en toutes occasions,
+Et les soutenir chaque fois que nécessaire.
+Je me vêti donc de ce masque de bonheur
+Et jamais plus alors je ne le retirais,
+Je mis de côté mes propres petits malheurs
+Pour me consacrer aux autres et mieux les aider.
+
+Mais ce masque alors commença à m'étouffer
+A force de ne pas pouvoir le retirer,
+Et mes peines ne faisant que s'accumuler
+Sans pouvoir sortir, commencèrent à déborder.
+J'écris donc un poème pour évacuer,
+Puis un autre viens, et encore d'autres après,
+Pour constituer ce recueil, que vous lisez :
+Voici donc le vrai moi, pour une fois, démasqué.
+
+Je ne sais pas comment vous y réagirez :
+Peut être que vous resterez indifférents
+Peut-être que vous serez peinés, attristés,
+Peut-être que vous trouverez ça exaltant.
+Et peut-être même, on peux toujours espérer
+Que dans ces poèmes vous vous retrouverez,
+Et qu'ainsi, comme d'autres, vous partagerez
+Ma vision, mes sentiments, ma réalité.`], 
+],
+    },
 ]
 
 export const ecransVerrouillage = [
@@ -62,7 +103,8 @@ export const apps = [
         position: [1, 1], 
         span: 4, 
         large: true, 
-        pilule: true,},
+        pilule: true,
+    },
     {id: "galerie",
         titre: "Photos",
         icon: "photo",
@@ -73,7 +115,7 @@ export const apps = [
         titre: "Messages",
         icon: "messages",
         background: "white",
-        position: [-1, 2],
+        position: [-1, 1],
     },
     {id: "instagram",
         titre: "Instagram",
@@ -96,11 +138,44 @@ export const apps = [
     {id: "parametre",
         titre: "Paramètres",
         icon: "parametre",
-        span: 2,
-        hauteur: 2,
-        large: true, 
         background: "rgb(24, 129, 197)",
         position: [7, 1],
+    },
+    {id: "google",
+        titre: "Chrome",
+        icon: "chrome",
+        background: "white",
+        position: [-1, 3],
+    },
+    {id: "youtubeMusic", 
+        icon: "youtubeMusicWidget", 
+        position: [8, 1], 
+        span: 4,
+        large: true, 
+    },
+    {id: "ko-fi",
+        titre: "Buy Me A Coffe",
+        icon: "ko-fi",
+        position: [7, 4],
+        url: "https://ko-fi.com/elianomigliore",
+    },
+    {id: "wattpad",
+        titre: "Wattpad",
+        icon: "wattpad",
+        position: [9, 1],
+        url: "https://www.wattpad.com/user/ElianoMigliore",
+    },
+    {id: "padlet",
+        titre: "Un Petit Mot ?",
+        icon: "padlet",
+        position: [7, 3],
+        url: "https://padlet.com/ElianoMi/UnPetitMot",
+    },
+    {id: "note",
+        titre: "Notes",
+        icon: "note",
+        background: "orange",
+        position: [9, 4],
     },
 ]
 
@@ -111,6 +186,7 @@ export const state = {
     lastTriMessage: new Map(),
     dataParing: new Map(),
     lastId: -1,
+    lastNoteId: -1,
     swiper: null,
 };
 
