@@ -43,7 +43,28 @@ export const ecrans = [
     {id: "youtubeMusic",
         screen: "youtubeMusic"},
     {id: "parametre",
-        screen: "parametre"},
+        titre: "Bienvenus !",
+        background: "navy",
+        titleColor: "white",
+        text: `Bien le bonjour tout le monde ! Je me présente, Eliano Migliore, votre humble serviteur.
+
+Je n'ai jamais été doué pour parler de moi, donc je vais faire simple et efficace 😅
+
+Je suis un grand touche-à-tout, j'aime bricoler, écrire, la robotique et l'électronique, le cosplay et les produits dérivés, la programmation et l'informatique...
+Enfin bref, beaucoup de choses, et toujours plein d'idées et de domaines que j'aimerais étudier et pratiquer.
+
+Après avoir vu un projet similaire à celui-ci, je me suis dit que c'était une bonne occasion pour apprendre de nouveaux langages informatiques, de nouvelles méthodes de programmation, et surtout d'avoir enfin un nouveau projet !
+Mais surtout, c'est aussi un bon moyen de commencer à montrer un peu qui je suis et de faire parler de moi.
+
+L'objectif est de promouvoir un peu mes poèmes, car au fil des années j'ai écrit, d'abord un peu, et de plus en plus, jusqu'à arriver à presque un recueil entier. Alors j'aimerais en profiter pour réaliser un de mes plus grands rêves : publier un premier livre !!
+Car écrire représente beaucoup pour moi. Lire était à l'époque ma seule échappatoire, je passais mon temps à dévorer les romans, et écrire aidait à canaliser mon imagination débordante. Puis en grandissant, j'ai eu de plus en plus de mal à parler, de façon générale, et là encore écrire est devenu ma seule façon de réussir à m'exprimer et à me libérer quand une situation devenait trop pesante.
+C'est pour cela que je me force aujourd'hui à concrétiser ce projet avec vous !!
+
+Mon but est aussi de me forcer à m'ouvrir aux inconnus (mes amis témoigneront que je n'ai jamais été doué pour ça...) en espérant que cela me donne la motivation d'avancer dans mes autres projets ; mais surtout de faire partager mes passions : car j'ai découvert ce que j'aimais un peu au hasard, donc j'aimerais à mon tour faire partager ces possibilités !
+
+Enfin, si tout cela vous intéresse, ou si le projet vous a plu, n'hésitez pas à laisser un mot ! (Et si ça vous a VRAIMENT plu, vous avez également la possibilité de donner un peu pour soutenir le projet !)
+
+MERCI DE VOTRE ATTENTION !!!`,},
     {id: "note",
         titre: "Note",
         background: "black",

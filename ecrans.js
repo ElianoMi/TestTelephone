@@ -62,6 +62,12 @@ export function creerEcrans(ecrans) {
                 note.className = 'notes';
                 section.appendChild(note);
             }
+            if ( e.text ) {
+                const texte = document.createElement("p");
+                texte.className = "poeme";
+                texte.textContent = e.text;
+                section.appendChild(texte);
+            }
             if (e.swipe === 2) {
                 const pagination = document.createElement("div");
                 pagination.className = 'swiper-pagination';
