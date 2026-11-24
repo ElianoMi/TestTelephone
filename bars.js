@@ -1,4 +1,4 @@
-import { afficher, initGesture } from './useful.js';
+import { afficher, initGesture, fondEcran } from './useful.js';
 import { state } from './data.js';
 
 export function creerWidget() {
@@ -59,10 +59,20 @@ export function creerNav() {
     navbar.appendChild(previous);
 
     initGesture(previous, (gesture) => {
-        if (gesture === 'Tap' && state.lastEcrans.at(-1) !== "accueil") {
-            state.lastEcrans.pop();
-            afficher(state.lastEcrans.at(-1));
-            if (state.lastEcrans.at(-1) !== "accueil") state.lastEcrans.pop();
+        const telephone = document.getElementById("telephone");
+        const lastEcran = state.lastEcrans.at(-1);
+        const lastSection = document.getElementById(lastEcran);
+        if (gesture === 'Tap' && lastEcran !== "accueil") {
+            lastSection.style.background = fondEcran(lastSection);
+            telephone.style.background = fondEcran(document.getElementById(state.lastEcrans.at(-2)));
+            lastSection.classList.add('fermeture');
+
+            lastSection.addEventListener('animationend', () => {
+                state.lastEcrans.pop();
+                afficher(state.lastEcrans.at(-1));
+                lastSection.classList.remove('fermeture');
+                if (state.lastEcrans.at(-1) !== "accueil") state.lastEcrans.pop();
+            }, { once: true })
         }
     });
 
@@ -79,7 +89,16 @@ export function creerNav() {
     navbar.appendChild(home);
 
     initGesture(home, (gesture) => {
-        if (gesture === 'Tap') {afficher("accueil");}
+        const lastEcran = state.lastEcrans.at(-1);
+        const lastSection = document.getElementById(lastEcran);
+        if (gesture === 'Tap' && lastEcran !== "accueil") {
+            lastSection.style.background = fondEcran(lastSection);
+            lastSection.classList.add('fermeture');
+            lastSection.addEventListener('animationend', () => {
+                afficher("accueil");
+                lastSection.classList.remove('fermeture');
+            }, { once: true })
+        }
     });
 
 
@@ -96,7 +115,16 @@ export function creerNav() {
     navbar.appendChild(app);
 
     initGesture(app, (gesture) => {
-        if (gesture === 'Tap' && state.lastEcrans.at(-1) !== "accueil") {afficher("accueil");}
+        const lastEcran = state.lastEcrans.at(-1);
+        const lastSection = document.getElementById(lastEcran);
+        if (gesture === 'Tap' && lastEcran !== "accueil") {
+            lastSection.style.background = fondEcran(lastSection);
+            lastSection.classList.add('fermeture');
+            lastSection.addEventListener('animationend', () => {
+                afficher("accueil");
+                lastSection.classList.remove('fermeture');
+            }, { once: true })
+        }
     });
 
 

@@ -9,6 +9,14 @@
         ) / 7
     );
 } /* widget + nav + marginEcran + paddingEcran */
+@keyframes ouverture {
+    from { transform: scale(0); opacity: 0; }
+    to   { transform: scale(1); opacity: 1; }
+}
+@keyframes fermeture {
+    from { transform: scale(1); opacity: 1; }
+    to   { transform: scale(0); opacity: 0; }
+}
 body {
     display: flex;
     align-items: center;
@@ -194,6 +202,8 @@ ul {
     box-sizing: border-box;
     min-height: 0;
 }
+.ecran.ouverture { animation: ouverture 0.2s ease-out; }
+.ecran.fermeture { animation: fermeture 0.1s ease-out; }
 .swiper-slide.ecran {
     flex-grow: 0;
     flex-shrink: 0;
@@ -343,7 +353,7 @@ ul {
     list-style-type: none;
 
     scrollbar-width: thin;
-    scrollbar-color: steelblue skyblue;
+    scrollbar-color: lightgray grey;
     /*scrollbar-width: none*/
 
     touch-action: auto;

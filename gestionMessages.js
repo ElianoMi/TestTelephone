@@ -59,7 +59,7 @@ function creerContact (ecran, name, dateLastMsg) {
         ignore : true,
     })
     section.id = idConv;
-    section.className = 'cache ecran noselect';
+    section.className = 'cache ecran noselect ouverture';
 
     const h1 = document.createElement("h1");
     h1.textContent = name;

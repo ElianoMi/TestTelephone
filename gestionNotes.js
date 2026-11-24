@@ -24,7 +24,7 @@ export function actualiserNote (notes) {
             ignore : true,
         });
         section.id = idNote;
-        section.className = 'cache ecran noselect';
+        section.className = 'cache ecran noselect ouverture';
         
         const h1 = document.createElement("h1");
         h1.textContent = note[0];

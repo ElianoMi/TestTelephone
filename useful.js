@@ -2,9 +2,19 @@ import { ecrans, state } from './data.js';
 import { actualiserMessages } from './gestionMessages.js';
 import { actualiserGalerie } from './gestionPhotos.js';
 
+export function fondEcran(section, liste_e = ecrans) {
+    const ecran = liste_e.find(e => e.id === section.id);
+    return (ecran?.screen)
+        ? `url('./Images/Fronts/${ecran.screen}.jpg') center/cover`
+        : (ecran?.background)
+            ? ecran.background
+            : "lightblue";
+}
+
 export function afficher(n, liste_e = ecrans) {
     const liste_ecrans = document.querySelectorAll(".ecran");
     const ecranActif = liste_e.find(e => e.id === n);
+    const sectionActif = document.getElementById(n);
     const telephone = (liste_e === ecrans) 
         ? document.getElementById("telephone")
         : document.getElementById("telephone-verrou") ;
@@ -15,11 +25,15 @@ export function afficher(n, liste_e = ecrans) {
         if (ecranActif.swipe && ecran.dataset.swipe === String(ecranActif.swipe)) ecran.classList.remove('cache');
     });
 
-    telephone.style.background = (ecranActif?.screen)
-        ? `url('./Images/Fronts/${ecranActif?.screen}.jpg') center/cover`
-        : (ecranActif?.background)
-            ? ecranActif.background
-            : "lightblue";
+    const ouverture = sectionActif.getAnimations().filter(a => a.animationName === "ouverture");
+    if (ouverture.length === 0) telephone.style.background = fondEcran(sectionActif, liste_e);
+    else {
+        sectionActif.style.background = fondEcran(sectionActif, liste_e);
+            ouverture[0].finished.then( () => {
+            telephone.style.background = fondEcran(sectionActif, liste_e);
+            sectionActif.style.background ="transparent";
+        });
+    }
     
     if (ecranActif?.messages) {
         actualiserMessages(ecranActif);

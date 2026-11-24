@@ -9,6 +9,11 @@ export function creerEcrans(ecrans) {
             section.id = e.id;
             section.className = 'cache ecran noselect';
             if ( e.swipe ) section.classList.add('swiper-slide');
+            else {
+                section.classList.add('ouverture');
+                if (e.screen)  section.style.background = `url('./Images/Fronts/${e.screen}.jpg') center/cover`; 
+                else section.style.background = (e.background) ? e.background : "lightblue";
+            }
 
             if (e.titre && e.titre !== "No") {
                 const h1 = document.createElement("h1");
