@@ -94,10 +94,10 @@ swiper1.on('slideChangeTransitionEnd', (swiper) => {
     const indexMsgPage = ecrans.findIndex(e => e.id === "messages");
 
     setTimeout( () => {
-        ecrans[indexMsgPage].messages.push(["Nico IA", 1, "Nouveau message 2", new Date()]);
+        ecrans[indexMsgPage].messages.push(["Nico IA", 1, `Bienvenue dans cette expérience ! Je suis Nico, votre assistant IA qui vous guidera pendant cette avanture.`, new Date()]);
         actualiserMessages(ecrans[indexMsgPage]);
         const idNico = state.dataParing.get("Nico IA")[1];
         notification("1 new message : \"Nico IA\"", idNico);
-    }, 15000);
+    }, 10000);
 });
 

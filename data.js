@@ -11,27 +11,32 @@ export const ecrans = [
         screen: "homeScreen",},
     {id: "messages",
         titre:"Messages", 
-        messages: [ ["Luc", 1, "Message reçu", new Date(2026, 10, 11, 23, 25)], //1: message reçu ; 0: message envoyé
-                ["Amélie", 0, "Message envoyé", new Date(2026, 2, 10, 0, 0)],
-                ["Maman", 1, `Joyeux anniversaire mon coeur !
-Je t'aime fort, bisous !`, new Date(2005, 10, 26, 23, 25)],
-                ["Luc", 1, "Deux messages reçus à la suite", new Date(2026, 10, 3, 22, 28)],
-                ["Amandine ❤️", 0, "Une réponse assez longue aussi, pour tester encore une fois le risque d'overflow.", new Date(2025, 8, 7, 10, 0)],
-                ["Luc", 0, "Message aléatoire pour tester le scroll", new Date(2025, 4, 8, 0, 0)],
-                ["Amélie",1, "Message aléatoire pour tester le scroll", new Date(2025, 4, 22, 0, 0)],
-                ["Amélie", 0, "Message aléatoire pour tester le scroll", new Date(2023, 10, 1, 0, 0)],
-                ["Amélie", 1, "Message aléatoire pour tester le scroll", new Date(2023, 11, 27, 0, 0)],
-                ["Amélie", 0, "Message aléatoire pour tester le scroll", new Date(2023, 9, 21, 0, 0)],
+        messages: [
+            ["Luc", 1, "Message reçu", new Date(2026, 10, 11, 23, 25)], //1: message reçu ; 0: message envoyé    
+            ["Luc", 1, "Deux messages reçus à la suite", new Date(2026, 10, 3, 22, 28)],
+            ["Luc", 0, "Message aléatoire pour tester le scroll", new Date(2025, 4, 8, 0, 0)],
 
-                ["Celyann", 0, "Hola! C'est juste pour prévenir que mes conversations ont toutes été effacés pour une obscure raison. Voila  voila. Oh et aussi j'ai eu une super idée de projet ! Mais je sens que je vais encore me lancer dans un truc impossible...", new Date(2026, 10, 3, 22, 28)],
-                ["Celyann", 0, "Salut, comment ça va ? Dis tu aurai le mémo que le prof de traitement du signal nous as passé ?", new Date(2026, 10, 4, 18, 6)],
-                ["Celyann", 1, "Pas de problème, je t'ai envoyé ça sur WhatsApp. Et sympa que tu ai réussi à te trouver un projet pour t'occuper, tu me tiendra au courant de l'avancement ?", new Date(2026, 10, 11, 12, 9)],
-                ["Celyann", 0, "Okok, avec grand plaisir ! Et merci bien !!", new Date(2026, 10, 11, 16, 35)],
-                ["Celyann", 1, "Salut mec, t'as eu le lire réglement de la Coupe de France de Robotique ? On verra comment on s'organise pour les équipe cette année.", new Date(2026, 10, 14, 23, 23 )],
-                ["Celyann", 0, "Yep je l'ai vu, le thème est sympa ça va ! Et il faudra aussi qu'on fasse le point sur la présidence du club de Robotique quand tu aura le temps, on en discutera avec Baptiste.", new Date(2026, 10, 15, 20, 23)],
-                ["Celyann", 0, "T'as vu le dernier message du prof de logique ??? Je suis SCAN-DA-LI-SE !", new Date(2026, 10, 17, 1, 19)],
-                ["Celyann", 1, "Non je ne l'ai pas encore vu, je regarderai aprés sinon je risque de raté mon bus", new Date(2026, 10, 18, 19, 29)],
-            ],
+            ["Maman", 1, `Joyeux anniversaire mon coeur !
+Je t'aime fort, bisous !`, new Date(2005, 10, 26, 23, 25)],
+            ["Maman", 0, "👍", new Date(2025, 10, 26, 23, 25)],
+
+            ["Stessy", 0, "Hola ! Bon, comme mon receuil est quasiment fini, je vais me lancer dans un petit projet pour essayer de faire connaitre un peu mes poèmes, voir si ils plaisent... Je t'en parlerai plus quand on se verra !", new Date(2026, 2, 10, 0, 0)],
+            ["Stessy", 0, `Salut ! Alors déjà, j'ai écrit un nouveau poème (que j'ai déjà posté). Comme la dernière fois tu m'avais dit qu'ils te plaisaient... 
+Ensuite, je voulais te dire que ça y est, j'ai pris une decision : si jamais je continue d'avoir des retours positifs, je vais voir pour publier un receuil complètement. Voila voila !`, new Date(2025, 4, 2, 0, 0)],
+            ["Stessy", 0, "Coucou ! C'était juste pour te prévenir que j'ai écris un nouveau poème. Si ça t'intéresse de le lire...", new Date(2023, 10, 1, 0, 0)],
+            ["Stessy", 0, "Coucou ! Oui, je me suis enfin lancé finalement 😅 Après je te préviens, ils sont pas tous joyeux mdrr", new Date(2023, 9, 20, 0, 15)],
+            ["Stessy", 1, "Coucouu, ouii j'ai vu !! Par contre je confirme ils sont pas joyeux 😂 Mais ils sont bien écrit je trouve, t'as bien fait de les poster !!", new Date(2023, 11, 27, 0, 0)],
+            ["Stessy", 1, "Coucouuu ! J'ai vu que tu t'était enfin décidé à te faire un compte Wattpad ! Ce soir je me dépèche de lire ce que tu as mis !", new Date(2023, 9, 20, 0, 0)],
+
+            ["Celyann", 0, "Hola! C'est juste pour prévenir que mes conversations ont toutes été effacés pour une obscure raison. Voila  voila. Oh et aussi j'ai eu une super idée de projet ! Mais je sens que je vais encore me lancer dans un truc impossible...", new Date(2026, 10, 3, 22, 28)],
+            ["Celyann", 0, "Salut, comment ça va ? Dis tu aurai le mémo que le prof de traitement du signal nous as passé ?", new Date(2026, 10, 4, 18, 6)],
+            ["Celyann", 1, "Pas de problème, je t'ai envoyé ça sur WhatsApp. Et sympa que tu ai réussi à te trouver un projet pour t'occuper, tu me tiendra au courant de l'avancement ?", new Date(2026, 10, 11, 12, 9)],
+            ["Celyann", 0, "Okok, avec grand plaisir ! Et merci bien !!", new Date(2026, 10, 11, 16, 35)],
+            ["Celyann", 1, "Salut mec, t'as eu le lire réglement de la Coupe de France de Robotique ? On verra comment on s'organise pour les équipe cette année.", new Date(2026, 10, 14, 23, 23 )],
+            ["Celyann", 0, "Yep je l'ai vu, le thème est sympa ça va ! Et il faudra aussi qu'on fasse le point sur la présidence du club de Robotique quand tu aura le temps, on en discutera avec Baptiste.", new Date(2026, 10, 15, 20, 23)],
+            ["Celyann", 0, "T'as vu le dernier message du prof de logique ??? Je suis SCAN-DA-LI-SE !", new Date(2026, 10, 17, 1, 19)],
+            ["Celyann", 1, "Non je ne l'ai pas encore vu, je regarderai aprés sinon je risque de raté mon bus", new Date(2026, 10, 18, 19, 29)],
+        ],
         screen: "messages",
     },
     {id: "galerie",
