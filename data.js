@@ -12,14 +12,21 @@ export const ecrans = [
     {id: "messages",
         titre:"Messages", 
         messages: [
-            ["Luc", 1, "Message reçu", new Date(2026, 10, 11, 23, 25)], //1: message reçu ; 0: message envoyé    
-            ["Luc", 1, "Deux messages reçus à la suite", new Date(2026, 10, 3, 22, 28)],
-            ["Luc", 0, "Message aléatoire pour tester le scroll", new Date(2025, 4, 8, 0, 0)],
-
+            //Les dates des messages correspondent à des événements lambdas de ma vie ces dernières années
+            ["Baptiste", 1, "Salut ! J'ai eu une idée de projet à faire !! On va faire un Tetris, j'ai vu une vidéos avec tout les éléments dont on a besoin !", new Date(2026, 10, 3, 22, 28)], //1: message reçu ; 0: message envoyé 
+            ["Baptiste", 0, "Oh yep, trop bonne idée !! On fait ça !", new Date(2026, 10, 3, 22, 40)],
+            ["Baptiste", 0, "Hola ! J'ai eu une trop bonne idée de projet !!! Je vais faire un robot comme dans R.E.P.O. mais en version irl !", new Date(2026, 10, 11, 23, 25)],
+            ["Baptiste", 0, "(Un jours il faudra que j'apprenne à me lancer des projets réalisables 😂)", new Date(2026, 10, 11, 23, 26)],
+            ["Baptiste", 1, "Mdrr stylé, mais bonne chance gars", new Date(2026, 10, 11, 23, 50)],
+            ["Baptiste", 1, "Oh j'ai vu un truc il faudra trop qu'on essaie de le faire, je te l'ai envoyé sur insta !!", new Date(2026, 10, 20, 10, 20)],
+            ["Baptiste", 0, "Ohhhh stylé !! Je veux trop qu'on le fase !!! Oh et btw j'ai fait une petite appli pour controler un ruban LED en Bluetooth, je t'ai envoyé sur WhatsApp pour que tu vois. Je suis content, c'est la première fois que je fais ce genre de chose !", new Date(2026, 10, 20, 10, 22)],
+            ["Baptiste", 1, "Mdrr gars t'es vraiment fou, mais j'avoue ça rend plutot bien. Faudra que tu m'explique comment t'as fait à l'occasion", new Date(2026, 10, 20, 10, 50)],
+            ["Baptiste", 0, "Salut ! Dis pour le projet de robotique, tu voudras qu'on fasse le point Vendredi pendant midi ? Il faudra qu'on regle les détails de la pince du robot et de la base roulante.", new Date(2025, 4, 8, 0, 0)],
+            //Les dates de messages correspondent à mon anniversaire
             ["Maman", 1, `Joyeux anniversaire mon coeur !
 Je t'aime fort, bisous !`, new Date(2005, 10, 26, 23, 25)],
             ["Maman", 0, "👍", new Date(2025, 10, 26, 23, 25)],
-
+            //Les dates des messages correspondent aux publications Wattpad de mes poèmes
             ["Stessy", 0, "Hola ! Bon, comme mon receuil est quasiment fini, je vais me lancer dans un petit projet pour essayer de faire connaitre un peu mes poèmes, voir si ils plaisent... Je t'en parlerai plus quand on se verra !", new Date(2026, 2, 10, 0, 0)],
             ["Stessy", 0, `Salut ! Alors déjà, j'ai écrit un nouveau poème (que j'ai déjà posté). Comme la dernière fois tu m'avais dit qu'ils te plaisaient... 
 Ensuite, je voulais te dire que ça y est, j'ai pris une decision : si jamais je continue d'avoir des retours positifs, je vais voir pour publier un receuil complètement. Voila voila !`, new Date(2025, 4, 2, 0, 0)],
@@ -27,7 +34,7 @@ Ensuite, je voulais te dire que ça y est, j'ai pris une decision : si jamais je
             ["Stessy", 0, "Coucou ! Oui, je me suis enfin lancé finalement 😅 Après je te préviens, ils sont pas tous joyeux mdrr", new Date(2023, 9, 20, 0, 15)],
             ["Stessy", 1, "Coucouu, ouii j'ai vu !! Par contre je confirme ils sont pas joyeux 😂 Mais ils sont bien écrit je trouve, t'as bien fait de les poster !!", new Date(2023, 11, 27, 0, 0)],
             ["Stessy", 1, "Coucouuu ! J'ai vu que tu t'était enfin décidé à te faire un compte Wattpad ! Ce soir je me dépèche de lire ce que tu as mis !", new Date(2023, 9, 20, 0, 0)],
-
+            //Les dates des messages correspondent aux dates d'avancées clés du projet
             ["Celyann", 0, "Hola! C'est juste pour prévenir que mes conversations ont toutes été effacés pour une obscure raison. Voila  voila. Oh et aussi j'ai eu une super idée de projet ! Mais je sens que je vais encore me lancer dans un truc impossible...", new Date(2026, 10, 3, 22, 28)],
             ["Celyann", 0, "Salut, comment ça va ? Dis tu aurai le mémo que le prof de traitement du signal nous as passé ?", new Date(2026, 10, 4, 18, 6)],
             ["Celyann", 1, "Pas de problème, je t'ai envoyé ça sur WhatsApp. Et sympa que tu ai réussi à te trouver un projet pour t'occuper, tu me tiendra au courant de l'avancement ?", new Date(2026, 10, 11, 12, 9)],
@@ -36,6 +43,7 @@ Ensuite, je voulais te dire que ça y est, j'ai pris une decision : si jamais je
             ["Celyann", 0, "Yep je l'ai vu, le thème est sympa ça va ! Et il faudra aussi qu'on fasse le point sur la présidence du club de Robotique quand tu aura le temps, on en discutera avec Baptiste.", new Date(2026, 10, 15, 20, 23)],
             ["Celyann", 0, "T'as vu le dernier message du prof de logique ??? Je suis SCAN-DA-LI-SE !", new Date(2026, 10, 17, 1, 19)],
             ["Celyann", 1, "Non je ne l'ai pas encore vu, je regarderai aprés sinon je risque de raté mon bus", new Date(2026, 10, 18, 19, 29)],
+            ["Celyann", 0, "Hola ! Juste pour te tenir au courant, je serai pas en cours Vendredi, je serai à la présentation des anciens élèves de mon ancienne prépa. Voila voila !", new Date(2026, 10, 25, 0, 26)],
         ],
         screen: "messages",
     },
