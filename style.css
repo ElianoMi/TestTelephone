@@ -291,6 +291,8 @@ ul {
     border-radius: 15px;
     word-wrap: break-word;
     width: fit-content;
+    
+    white-space: pre-wrap;
 }
 .msg-recu {
     align-self: flex-start;

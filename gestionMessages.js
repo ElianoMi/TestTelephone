@@ -55,7 +55,7 @@ function creerContact (ecran, name, dateLastMsg) {
         titre : name,
         noNavigation: true,
         id : idConv,
-        screen : "messages",
+        screen : "message",
         ignore : true,
     })
     section.id = idConv;

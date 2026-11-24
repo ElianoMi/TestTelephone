@@ -94,15 +94,10 @@ swiper1.on('slideChangeTransitionEnd', (swiper) => {
     const indexMsgPage = ecrans.findIndex(e => e.id === "messages");
 
     setTimeout( () => {
-        ecrans[indexMsgPage].messages.push(["Maman", 1, "Nouveau message 1", new Date()]);
+        ecrans[indexMsgPage].messages.push(["Nico IA", 1, "Nouveau message 2", new Date()]);
         actualiserMessages(ecrans[indexMsgPage]);
-    }, 10000);
-
-    setTimeout( () => {
-        ecrans[indexMsgPage].messages.push(["Téo", 1, "Nouveau message 2", new Date()]);
-        actualiserMessages(ecrans[indexMsgPage]);
-        const idTeo = state.dataParing.get("Téo")[1];
-        notification("1 new message : \"Téo\" (et on essaie un très long message pour un tester les effets d'un overflow)", idTeo);
+        const idNico = state.dataParing.get("Nico IA")[1];
+        notification("1 new message : \"Nico IA\"", idNico);
     }, 15000);
 });
 
