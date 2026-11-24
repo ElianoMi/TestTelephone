@@ -32,7 +32,7 @@ Ensuite, je voulais te dire que ça y est, j'ai pris une decision : si jamais je
             ["Celyann", 0, "Salut, comment ça va ? Dis tu aurai le mémo que le prof de traitement du signal nous as passé ?", new Date(2026, 10, 4, 18, 6)],
             ["Celyann", 1, "Pas de problème, je t'ai envoyé ça sur WhatsApp. Et sympa que tu ai réussi à te trouver un projet pour t'occuper, tu me tiendra au courant de l'avancement ?", new Date(2026, 10, 11, 12, 9)],
             ["Celyann", 0, "Okok, avec grand plaisir ! Et merci bien !!", new Date(2026, 10, 11, 16, 35)],
-            ["Celyann", 1, "Salut mec, t'as eu le lire réglement de la Coupe de France de Robotique ? On verra comment on s'organise pour les équipe cette année.", new Date(2026, 10, 14, 23, 23 )],
+            ["Celyann", 1, "Salut mec, t'as eu le temps de lire le réglement de la Coupe de France de Robotique ? On verra comment on s'organise pour les équipe cette année.", new Date(2026, 10, 14, 23, 23 )],
             ["Celyann", 0, "Yep je l'ai vu, le thème est sympa ça va ! Et il faudra aussi qu'on fasse le point sur la présidence du club de Robotique quand tu aura le temps, on en discutera avec Baptiste.", new Date(2026, 10, 15, 20, 23)],
             ["Celyann", 0, "T'as vu le dernier message du prof de logique ??? Je suis SCAN-DA-LI-SE !", new Date(2026, 10, 17, 1, 19)],
             ["Celyann", 1, "Non je ne l'ai pas encore vu, je regarderai aprés sinon je risque de raté mon bus", new Date(2026, 10, 18, 19, 29)],
