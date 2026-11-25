@@ -74,8 +74,11 @@ export const updateTime = () => {
 
     const horloges = document.querySelectorAll('time');
     horloges.forEach( horloge => {
+        const timer = horloge.querySelector('h4');
         const heure = horloge.querySelector('h2');
-        if (heure !== null) heure.textContent = time;
+        if (timer !== null) timer.textContent = `${time}:${String(t.getSeconds()).padStart(2, '0')}`;
+        
+        else if (heure !== null) heure.textContent = time;
         else horloge.textContent = time;
 
         const jour = horloge.querySelector('h3');

@@ -164,6 +164,8 @@ ul {
 }
 .time h2 { font-size: 10cqw; font-weight: inherit; }
 .time h3 { font-size: 5.8cqw; font-weight: inherit; }
+#timeApp > .time { margin: auto; }
+.time h4 { font-size: 17cqw; padding-bottom: 20cqw;}
 .big.time { margin-left: 3%; }
 .big.time h2 { font-size: 18cqw; }
 .big.time h3 { font-size: 10cqw; }

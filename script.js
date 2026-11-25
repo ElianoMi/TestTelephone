@@ -4,7 +4,7 @@ import { chargerPhotos } from './gestionPhotos.js';
 import { creerWidget, creerNav, creerBottomAccueil } from './bars.js';
 import { creerEcrans } from './ecrans.js';
 import { ecrans, ecransVerrouillage, state } from './data.js';
-import { formeAccueil } from './finitionEcrans.js';
+import { formeAccueil, formeTime } from './finitionEcrans.js';
 import { actualiserNote } from './gestionNotes.js';
 
 chargerPhotos()
@@ -55,6 +55,7 @@ document.body.append(telephone);
 
 creerBottomAccueil();
 formeAccueil();
+formeTime();
 
 state.swiper = new Swiper('.mySwiper', {
     effect: 'creative',

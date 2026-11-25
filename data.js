@@ -428,6 +428,12 @@ Tu es ma muse, mon monde, tout simplement
 Et j'espère qu'un jour tu en pensera autant...`],
 ],
     },
+    {id: "meteoApp",
+        screen: "meteoApp"},
+    {id: "timeApp",
+        titre: "Horloge",
+        titleColor: "white",
+        screen: "timeApp"},
 ]
 
 export const ecransVerrouillage = [

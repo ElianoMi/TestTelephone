@@ -52,6 +52,16 @@ export function formeAccueil() {
     const pagination2 = accueil2.querySelector('.swiper-pagination');
     const bottomAccueil = document.getElementById("bottomAccueil");
 
+    const time = horloge.querySelector('.time');
+    const meteo = horloge.querySelector('.meteo');
+
+    initGesture(time, (gesture) => {
+        if (gesture === 'Tap') afficher("timeApp");
+    });
+    initGesture(meteo, (gesture) => {
+        if (gesture === 'Tap') afficher("meteoApp");
+    });
+
     const pages = [creerGrille(), creerGrille()];
 
     if (horloge) {
@@ -75,4 +85,14 @@ export function formeAccueil() {
 
     accueil.insertBefore(pages[0], pagination);
     accueil2.insertBefore(pages[1], pagination2);
+}
+
+export function formeTime() {
+    const timeApp = document.getElementById("timeApp");
+
+    const horloge = document.createElement("time");
+    horloge.className = 'time';
+    const timer = document.createElement("h4");
+    horloge.appendChild(timer);
+    timeApp.appendChild(horloge);
 }
