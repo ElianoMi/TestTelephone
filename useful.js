@@ -171,7 +171,7 @@ export function notification( txt, cible ) {
 
     initGesture(notif, (gesture) => {
         if (gesture === 'Tap') {
-            if (cible.startsWith("Conv")) afficher("messages");
+            if (cible.startsWith("Conv") && state.lastEcrans.at(-1) !== "messages") afficher("messages");
             afficher(cible);
             notif.remove();
         }
